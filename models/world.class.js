@@ -9,8 +9,9 @@ class World {
     clouds = [
         new Cloud()
     ];
-
-    cactus = new Cactus;
+    backgroundObjects = [
+        new BackgroundObject('img/5.Fondo/Capas/1.suelo-fondo1/1.png', 0, 0)
+    ];
 
     canvas;
     ctx;
@@ -21,26 +22,30 @@ class World {
         this.draw();
     }
 
-    draw() {
 
+    draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        this.ctx.drawImage(this.cactus.img, this.cactus.x, this.cactus.y, this.cactus.width, this.cactus.height);
+        this.addObjectsToMap(this.clouds);
+        this.addObjectsToMap(this.backgroundObjects);
+        this.addObjectsToMap(this.enemies);
 
-        this.ctx.drawImage(this.character.img, this.character.x, this.character.y, this.character.width, this.character.height);
-
-        this.clouds.forEach(cloud => {
-            this.ctx.drawImage(cloud.img, cloud.x, cloud.y, cloud.width, cloud.height);
-        });
-
-        this.enemies.forEach(enemy => {
-            this.ctx.drawImage(enemy.img, enemy.x, enemy.y, enemy.width, enemy.height);
-        });
+        this.addToMap(this.character);
 
         let self = this;
-
-        requestAnimationFrame(function() {
+        requestAnimationFrame(function () {
             self.draw();
         });
     }
+
+    addObjectsToMap(objects) {
+        objects.forEach(o => {
+            this.addToMap(o);
+        })
+    }
+
+    addToMap(mo) {
+        this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
+    }
+
 }
