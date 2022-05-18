@@ -11,6 +11,8 @@ class MovableObject {
         this.img.src = path;
     }
 
+    currentImage = 0;
+
 
     /**
      * 
