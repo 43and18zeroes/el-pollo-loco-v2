@@ -4,11 +4,10 @@ class MovableObject {
     y = 180;
     width = 120;
     height = 250;
+    imageCache = {};
     currentImage = 0;
     speed = 0.15;
-
-    imageCache = {};
-
+    otherDirection = false;
 
     loadImage(path) {
         this.img = new Image();
