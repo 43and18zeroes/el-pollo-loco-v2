@@ -19,6 +19,7 @@ class World {
     canvas;
     ctx;
     keyboard;
+    camera_x = 0;
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -36,12 +37,18 @@ class World {
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+        // translate can move a picture, the second value is for the y-axis
+        this.ctx.translate(this.camera_x, 0);
+
         this.addObjectsToMap(this.clouds);
         this.addObjectsToMap(this.backgroundObjects);
         this.addObjectsToMap(this.clouds);
         this.addObjectsToMap(this.enemies);
 
         this.addToMap(this.character);
+
+        // return camera after everything is drawed (otherwise it would translate until infinity)
+        this.ctx.translate(-this.camera_x, 0);
 
         let self = this;
         requestAnimationFrame(function () {
