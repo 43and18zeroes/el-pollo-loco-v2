@@ -31,13 +31,14 @@ class Character extends MovableObject {
                 this.otherDirection = false;
             }
 
-            if (this.world.keyboard.LEFT == true) {
+            if (this.world.keyboard.LEFT == true && this.x > 0) {
                 this.x -= this.speed;
                 this.otherDirection = true;
             }
 
             // changes cam position inverted to the x of character
-            this.world.camera_x = -this.x;
+            // + 100 so character is away from the canvas border
+            this.world.camera_x = -this.x + 100;
 
         }, 1000 / 60);
 
