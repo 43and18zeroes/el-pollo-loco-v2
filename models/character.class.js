@@ -13,6 +13,7 @@ class Character extends MovableObject {
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-26.png'
     ];
     world;
+    walking_sound = new Audio('audio/walking.mp3');
 
     constructor() {
         super().loadImage('img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png');
@@ -25,15 +26,20 @@ class Character extends MovableObject {
     animate() {
 
         setInterval(() => {
-
+            // sound pauses during a draw() cycle in order to stop playing when character isn't walking
+            this.walking_sound.pause();
             if (this.world.keyboard.RIGHT == true && this.x < this.world.level.level_end_x) {
                 this.x += this.speed;
                 this.otherDirection = false;
+                // character move right -> sound plays
+                this.walking_sound.play();
             }
 
             if (this.world.keyboard.LEFT == true && this.x > 0) {
                 this.x -= this.speed;
                 this.otherDirection = true;
+                // character move left -> sound plays
+                this.walking_sound.play();
             }
 
             // changes cam position inverted to the x of character
