@@ -1,7 +1,7 @@
 class Character extends MovableObject {
 
     // y = 180;
-    y = 0;
+    y = 180;
     width = 120;
     height = 250;
     speed = 10;
@@ -57,6 +57,11 @@ class Character extends MovableObject {
                 this.walking_sound.play();
             }
 
+            if (this.world.keyboard.SPACE == true) {
+                this.speedY = 10 ;
+            } 
+
+
             // changes cam position inverted to the x of character
             // + 100 so character is away from the canvas border
             this.world.camera_x = -this.x + 100;
@@ -74,6 +79,8 @@ class Character extends MovableObject {
                 }
             }
         }, 50);
+
+        
     }
 
     jump() {
