@@ -1,6 +1,7 @@
 class Character extends MovableObject {
 
-    y = 180;
+    // y = 180;
+    y = 0;
     width = 120;
     height = 250;
     speed = 10;
@@ -15,13 +16,14 @@ class Character extends MovableObject {
     world;
     walking_sound = new Audio('audio/walking.mp3');
 
+    
     constructor() {
         super().loadImage('img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png');
         this.loadImages(this.IMAGES_WALKING);
-
+        this.applyGravity();
         this.animate();
     }
-    world;
+
 
     animate() {
 
@@ -57,6 +59,7 @@ class Character extends MovableObject {
                 this.playAnimation(this.IMAGES_WALKING);
             }
         }, 50);
+
 
     }
 
