@@ -44,23 +44,20 @@ class Character extends MovableObject {
             // sound pauses during a draw() cycle in order to stop playing when character isn't walking
             this.walking_sound.pause();
             if (this.world.keyboard.RIGHT == true && this.x < this.world.level.level_end_x) {
-                this.x += this.speed;
+                this.moveRight();
                 this.otherDirection = false;
-                // character move right -> sound plays
                 this.walking_sound.play();
             }
 
             if (this.world.keyboard.LEFT == true && this.x > 0) {
-                this.x -= this.speed;
+                this.moveLeft();
                 this.otherDirection = true;
-                // character move left -> sound plays
                 this.walking_sound.play();
             }
 
-            if (this.world.keyboard.SPACE == true) {
-                this.speedY = 10 ;
+            if (this.world.keyboard.SPACE == true && !this.isAboveGround()) {
+                this.jump();
             } 
-
 
             // changes cam position inverted to the x of character
             // + 100 so character is away from the canvas border
@@ -83,7 +80,8 @@ class Character extends MovableObject {
         
     }
 
-    jump() {
 
+    jump() {
+        this.speedY = 13;
     }
 }

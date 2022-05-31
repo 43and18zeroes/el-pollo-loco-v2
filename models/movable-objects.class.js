@@ -57,13 +57,16 @@ class MovableObject {
 
 
     moveRight() {
-        console.log('Moving right'); // this.img = document.getElementbyID('image') <img id="image">
+        this.x += this.speed;
+        // character move right -> sound plays
     }
-    
+
 
     moveLeft() {
-        setInterval(() => {
-            this.x -= this.speed;
-        }, 1000 / 60); // 60 FPS
+        this.x -= this.speed;
+    }
+
+    jump() {
+        
     }
 }
