@@ -11,6 +11,7 @@ class MovableObject {
     // two variables to control falling speed
     speedY = 0;
     acceleration = 0.5;
+    energy = 100;
 
 
     applyGravity() {
@@ -76,5 +77,16 @@ class MovableObject {
             this.y + this.height > mo.y &&
             this.x < mo.x &&
             this.y < mo.y + mo.height;
+    }
+
+    hit() {
+        this.energy -= 0.1;
+        if (this.energy < 0) {
+            this.energy = 0;
+        }
+    }
+
+    isDead() {
+        return this.energy == 0;
     }
 }
