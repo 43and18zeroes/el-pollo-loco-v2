@@ -5,6 +5,7 @@ class Character extends MovableObject {
     width = 120;
     height = 250;
     speed = 10;
+    
     IMAGES_WALKING = [
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-22.png',
@@ -13,6 +14,7 @@ class Character extends MovableObject {
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-25.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-26.png'
     ];
+    
     IMAGES_JUMPING = [
         'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-31.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-32.png',
@@ -25,6 +27,7 @@ class Character extends MovableObject {
         'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-39.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-40.png'
     ];
+  
     IMAGES_DEAD = [
         'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-51.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-52.png',
@@ -33,6 +36,21 @@ class Character extends MovableObject {
         'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-55.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-56.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-57.png'
+    ];
+
+    IMAGES_HURT = [
+        'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-41.png',
+        'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-42.png',
+        'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png'
+    ];
+   
+    IMAGES_HEALTHBAR = [
+        'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',
+        'img/7.Marcadores/Barra/Marcador vida/azul/20_.png',
+        'img/7.Marcadores/Barra/Marcador vida/azul/40_.png',
+        'img/7.Marcadores/Barra/Marcador vida/azul/60_.png',
+        'img/7.Marcadores/Barra/Marcador vida/azul/80_.png',
+        'img/7.Marcadores/Barra/Marcador vida/azul/100_.png'
     ];
     world;
     walking_sound = new Audio('audio/walking.mp3');
@@ -43,6 +61,8 @@ class Character extends MovableObject {
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_JUMPING);
         this.loadImages(this.IMAGES_DEAD);
+        this.loadImages(this.IMAGES_HURT);
+        this.loadImages(this.IMAGES_HEALTHBAR);
         this.applyGravity();
         this.animate();
     }
@@ -77,12 +97,20 @@ class Character extends MovableObject {
 
 
         setInterval(() => {
+            
             if (this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
             }
-            if (this.isAboveGround()) {
+            
+            else if (this.isHurt()) {
+                this.playAnimation(this.IMAGES_HURT);
+            }
+            
+            else if (this.isAboveGround()) {
                 this.playAnimation(this.IMAGES_JUMPING);
-            } else {
+            }
+            
+            else {
                 // walking animation
                 if (this.world.keyboard.RIGHT == true || this.world.keyboard.LEFT) {
                     this.playAnimation(this.IMAGES_WALKING);
