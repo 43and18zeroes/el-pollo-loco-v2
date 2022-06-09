@@ -36,11 +36,18 @@ class World {
         this.ctx.translate(this.camera_x, 0);
 
         this.addObjectsToMap(this.level.backgroundObjects);
+
+        this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
+        /* -------- Space for fixed objects ------------- */
+        this.addToMap(this.statusBar);
+        this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
+
+
         this.addObjectsToMap(this.level.clouds);
         this.addObjectsToMap(this.level.enemies);
 
         this.addToMap(this.character);
-        this.addToMap(this.statusBar);
+
 
         // return camera after everything is drawed (otherwise it would translate until infinity)
         this.ctx.translate(-this.camera_x, 0);
@@ -87,6 +94,8 @@ class World {
             this.level.enemies.forEach((enemy) => {
                 if (this.character.isColliding(enemy)) {
                     this.character.hit();
+                    // Manipulate statusbar display
+                    this.statusBar.setPercentage(this.character.energy);
                 }
             });
         }), 200;
