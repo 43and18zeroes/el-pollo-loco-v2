@@ -1,11 +1,4 @@
-class MovableObject {
-    img;
-    x = 120;
-    y = 180;
-    width = 120;
-    height = 250;
-    imageCache = {};
-    currentImage = 0;
+class MovableObject extends DrawableObject {
     speed = 0.15;
     otherDirection = false;
     // two variables to control falling speed
@@ -24,27 +17,9 @@ class MovableObject {
         }, 1000 / 60)
     }
 
+    
     isAboveGround() {
         return this.y < 180;
-    }
-
-
-    loadImage(path) {
-        this.img = new Image();
-        this.img.src = path;
-    }
-
-
-    /**
-     * 
-     * @param {Array} arr - ['img/image1.png', 'img/image2.png', ...]
-     */
-    loadImages(arr) {
-        arr.forEach((path) => {
-            let img = new Image();
-            img.src = path; // local
-            this.imageCache[path] = img; // global
-        });
     }
 
 

@@ -44,14 +44,6 @@ class Character extends MovableObject {
         'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png'
     ];
    
-    IMAGES_HEALTHBAR = [
-        'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',
-        'img/7.Marcadores/Barra/Marcador vida/azul/20_.png',
-        'img/7.Marcadores/Barra/Marcador vida/azul/40_.png',
-        'img/7.Marcadores/Barra/Marcador vida/azul/60_.png',
-        'img/7.Marcadores/Barra/Marcador vida/azul/80_.png',
-        'img/7.Marcadores/Barra/Marcador vida/azul/100_.png'
-    ];
     world;
     walking_sound = new Audio('audio/walking.mp3');
 
@@ -62,7 +54,6 @@ class Character extends MovableObject {
         this.loadImages(this.IMAGES_JUMPING);
         this.loadImages(this.IMAGES_DEAD);
         this.loadImages(this.IMAGES_HURT);
-        this.loadImages(this.IMAGES_HEALTHBAR);
         this.applyGravity();
         this.animate();
     }

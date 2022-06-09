@@ -1,6 +1,8 @@
 class World {
 
     character = new Character();
+    statusBar = new StatusBar();
+    
     level = level1;
     // enemies = level1.enemies;
     // clouds = level1.clouds;
@@ -11,6 +13,7 @@ class World {
     ctx;
     keyboard;
     camera_x = 0;
+    
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -37,6 +40,7 @@ class World {
         this.addObjectsToMap(this.level.enemies);
 
         this.addToMap(this.character);
+        this.addToMap(this.statusBar);
 
         // return camera after everything is drawed (otherwise it would translate until infinity)
         this.ctx.translate(-this.camera_x, 0);
