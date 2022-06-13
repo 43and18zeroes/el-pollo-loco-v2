@@ -2,7 +2,8 @@ class World {
 
     character = new Character();
     statusBar = new StatusBar();
-    
+    throwableObjects = [];
+
     level = level1;
     // enemies = level1.enemies;
     // clouds = level1.clouds;
@@ -13,7 +14,7 @@ class World {
     ctx;
     keyboard;
     camera_x = 0;
-    
+
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -21,7 +22,7 @@ class World {
         this.keyboard = keyboard;
         this.draw();
         this.setWorld();
-        this.checkCollisions();
+        this.run();
     }
 
     setWorld() {
@@ -46,6 +47,8 @@ class World {
         this.addObjectsToMap(this.level.clouds);
         this.addObjectsToMap(this.level.enemies);
 
+        this.addObjectsToMap(this.throwableObjects);
+
         this.addToMap(this.character);
 
 
@@ -66,7 +69,7 @@ class World {
 
     addToMap(mo) {
         // if object has an otherDirection var which is true
-        if(mo.otherDirection) {
+        if (mo.otherDirection) {
             // save current attributes of context
             this.ctx.save();
             // mirror image 
@@ -89,16 +92,28 @@ class World {
         }
     }
 
-    checkCollisions() {
+    run() {
         setInterval(() => {
-            this.level.enemies.forEach((enemy) => {
-                if (this.character.isColliding(enemy)) {
-                    this.character.hit();
-                    // Manipulate statusbar display
-                    this.statusBar.setPercentage(this.character.energy);
-                }
-            });
-        }), 200;
+            this.checkCollisions();
+            this.checkThrowObjects();
+        }, 50);
+    }
+
+    checkThrowObjects() {
+        if (this.keyboard.D) {
+            let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100);
+            this.throwableObjects.push(bottle);
+        }
+    }
+
+    checkCollisions() {
+        this.level.enemies.forEach((enemy) => {
+            if (this.character.isColliding(enemy)) {
+                this.character.hit();
+                // Manipulate statusbar display
+                this.statusBar.setPercentage(this.character.energy);
+            }
+        });
     }
 
 }
