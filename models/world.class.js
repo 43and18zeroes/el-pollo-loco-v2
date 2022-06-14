@@ -2,7 +2,7 @@ class World {
 
     character = new Character();
     statusBar = new StatusBar();
-    fullscreenEnter = new Button();
+    fullscreenEnter = new ButtonEnterFullscreen();
     // startScreen = new StaticScreen;
     throwableObjects = [];
 
