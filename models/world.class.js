@@ -2,6 +2,7 @@ class World {
 
     character = new Character();
     statusBar = new StatusBar();
+    startScreen = new StaticScreen;
     throwableObjects = [];
 
     level = level1;
@@ -14,6 +15,9 @@ class World {
     ctx;
     keyboard;
     camera_x = 0;
+
+
+    alreadyThrown = false;  // auxiliary var to prevent rapid throwing
 
 
     constructor(canvas, keyboard) {
@@ -37,19 +41,18 @@ class World {
         this.ctx.translate(this.camera_x, 0);
 
         this.addObjectsToMap(this.level.backgroundObjects);
-
-        this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
-        /* -------- Space for fixed objects ------------- */
-        this.addToMap(this.statusBar);
-        this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
-
-
         this.addObjectsToMap(this.level.clouds);
         this.addObjectsToMap(this.level.enemies);
 
         this.addObjectsToMap(this.throwableObjects);
 
         this.addToMap(this.character);
+
+        this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
+        /* -------- Space for fixed objects ------------- */
+        this.addToMap(this.statusBar);
+        // this.addToMap(this.startScreen);
+        this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
 
 
         // return camera after everything is drawed (otherwise it would translate until infinity)
@@ -100,9 +103,14 @@ class World {
     }
 
     checkThrowObjects() {
-        if (this.keyboard.D) {
-            let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100);
+        if (this.keyboard.D && this.alreadyThrown == false) {
+            this.alreadyThrown = true;
+            let bottle = new ThrowableObject(this.character.x + 50, this.character.y + 110);
             this.throwableObjects.push(bottle);
+
+            setTimeout(() => {
+                this.alreadyThrown = false;
+            }, 1000);
         }
     }
 

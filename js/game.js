@@ -6,9 +6,6 @@ let keyboard = new Keyboard(); // Instances keyboard object
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-
-
-    console.log('My Character', world.character);
 }
 
 
