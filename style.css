@@ -20,6 +20,7 @@ canvas {
     position: absolute;
     right: 0;
     bottom: 0;
+    padding: 4px 8px;
 }
 
 .icon__control {
@@ -27,7 +28,7 @@ canvas {
 }
 
 .icon__control span {
-    font-size: 50px;
+    font-size: 36px;
     color: white;
 }
 
