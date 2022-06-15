@@ -11,9 +11,29 @@ canvas {
     display: block;
 }
 
+#canvas-frame {
+    position: relative;
+    display: block;
+}
+
+#enter-fullscreen {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.icon__control {
+    cursor: pointer;
+}
+
+.icon__control span {
+    font-size: 50px;
+    color: white;
+}
+
 /* mobile view --------------- */
 @media only screen and (max-width: 720px) {
-    canvas {
+    canvas, #canvas-frame {
         width: 100%;
     }
 
@@ -23,7 +43,7 @@ canvas {
 }
 
 @media only screen and (max-height: 480px) {
-    canvas {
+    canvas, #canvas-frame {
         height: 100vh;
     }
 

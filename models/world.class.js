@@ -2,7 +2,7 @@ class World {
 
     character = new Character();
     statusBar = new StatusBar();
-    fullscreenEnter = new ButtonEnterFullscreen();
+    // fullscreenEnter = new ButtonEnterFullscreen();
     // startScreen = new StaticScreen;
     throwableObjects = [];
 
@@ -52,7 +52,7 @@ class World {
         this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
         /* -------- Space for fixed objects ------------- */
         this.addToMap(this.statusBar);
-        this.addToMap(this.fullscreenEnter);
+        // this.addToMap(this.fullscreenEnter);
         // this.addToMap(this.startScreen);
         this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
 
