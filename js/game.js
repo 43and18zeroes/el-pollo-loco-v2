@@ -34,6 +34,10 @@ window.addEventListener("keydown", (e) => {
     if (e.keyCode == 68) {
         keyboard.D = true;
     }
+
+    if (e.keyCode == 46) {
+        keyboard.BACKSPACE = true;
+    }
 });
 
 
@@ -60,6 +64,10 @@ window.addEventListener("keyup", (e) => {
 
     if (e.keyCode == 68) {
         keyboard.D = false;
+    }
+
+    if (e.keyCode == 46) {
+        keyboard.BACKSPACE = false;
     }
 });
 

@@ -40,9 +40,9 @@ class World {
         // translate can move a picture, the second value is for the y-axis
         this.ctx.translate(this.camera_x, 0);
 
-        this.addObjectsToMap(this.level.backgroundObjects);
-        this.addObjectsToMap(this.level.clouds);
-        this.addObjectsToMap(this.level.enemies);
+        // this.addObjectsToMap(this.level.backgroundObjects);
+        // this.addObjectsToMap(this.level.clouds);
+        // this.addObjectsToMap(this.level.enemies);
 
         this.addObjectsToMap(this.throwableObjects);
 
