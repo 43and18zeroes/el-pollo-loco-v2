@@ -16,6 +16,18 @@ canvas {
     display: block;
 }
 
+#startscreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#startscreen img {
+    width: 720px;
+    height: 480px;
+    z-index: 10;
+}
+
 #enter-fullscreen {
     position: absolute;
     right: 0;
