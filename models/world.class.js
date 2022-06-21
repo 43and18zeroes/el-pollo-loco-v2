@@ -2,13 +2,13 @@ class World {
 
     character = new Character();
     statusBar = new StatusBar();
-    startScreen = new StartScreen;
+    // startScreen = new StartScreen;
     throwableObjects = [];
 
     level = level1;
-    // enemies = level1.enemies;
-    // clouds = level1.clouds;
-    // backgroundObjects = level1.backgroundObjects;
+    enemies = level1.enemies;
+    clouds = level1.clouds;
+    backgroundObjects = level1.backgroundObjects;
 
 
     canvas;
@@ -40,9 +40,9 @@ class World {
         // translate can move a picture, the second value is for the y-axis
         this.ctx.translate(this.camera_x, 0);
 
-        // this.addObjectsToMap(this.level.backgroundObjects);
-        // this.addObjectsToMap(this.level.clouds);
-        // this.addObjectsToMap(this.level.enemies);
+        this.addObjectsToMap(this.level.backgroundObjects);
+        this.addObjectsToMap(this.level.clouds);
+        this.addObjectsToMap(this.level.enemies);
 
         this.addObjectsToMap(this.throwableObjects);
 
@@ -51,7 +51,7 @@ class World {
         this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
         /* -------- Space for fixed objects ------------- */
         this.addToMap(this.statusBar);
-        this.addToMap(this.startScreen);
+        // this.addToMap(this.startScreen);
         this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
 
 
