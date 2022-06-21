@@ -11,13 +11,16 @@ function init() {
 function startGame() {
     initLevel();
     world = new World(canvas, keyboard);
-    document.getElementById("startbutton").style.display="none";
-    document.getElementById("startscreen").style.display="none";
+    /* wait 30 ms to avoid black screen caused by loading */
+    setTimeout(() => {
+        document.getElementById("startbutton").style.display = "none";
+        document.getElementById("startscreen").style.display = "none";
+    }, 30);
 }
 
 
 // Basic eventlistener that displays pressed keys in the console
-window.addEventListener("keydown", (e) => { 
+window.addEventListener("keydown", (e) => {
     if (e.keyCode == 39) {
         keyboard.RIGHT = true;
     }
@@ -44,7 +47,7 @@ window.addEventListener("keydown", (e) => {
 });
 
 
-window.addEventListener("keyup", (e) => { 
+window.addEventListener("keyup", (e) => {
     if (e.keyCode == 39) {
         keyboard.RIGHT = false;
     }
