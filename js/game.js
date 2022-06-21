@@ -16,6 +16,7 @@ function startGame() {
         document.getElementById("startbutton").style.display = "none";
         document.getElementById("startscreen").style.display = "none";
     }, 30);
+    // test comment
 }
 
 
