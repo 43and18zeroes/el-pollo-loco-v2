@@ -5,7 +5,14 @@ let keyboard = new Keyboard(); // Instances keyboard object
 
 function init() {
     canvas = document.getElementById('canvas');
+}
+
+
+function startGame() {
+    initLevel();
     world = new World(canvas, keyboard);
+    document.getElementById("startbutton").style.display="none";
+    document.getElementById("startscreen").style.display="none";
 }
 
 
