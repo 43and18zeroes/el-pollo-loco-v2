@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto', sans-serif;
+    color: #424242;
     margin: 0px;
 }
 
@@ -25,7 +26,6 @@ canvas {
 #startscreen img {
     width: 720px;
     height: 480px;
-    z-index: 10;
 }
 
 #enter-fullscreen {
@@ -43,6 +43,35 @@ canvas {
     font-size: 36px;
     color: white;
 }
+
+#startbutton {
+    position: absolute;
+    top: 1;
+    bottom: 80%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#startbutton button {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 200;
+    color: #424242;
+    border: 3px solid #424242;
+    border-radius: 50px;
+    padding-right: 13px;
+    background: rgb(255,196,34);
+    background: linear-gradient(0deg, rgba(255,196,34,1) 0%, rgba(255,223,0,1) 35%, rgba(255,196,34,1) 100%);
+}
+
+#startbutton button span {
+    font-size: 50px;
+    font-weight: 800;
+}
+
 
 /* mobile view --------------- */
 @media only screen and (max-width: 720px) {
