@@ -74,6 +74,11 @@ window.addEventListener("keyup", (e) => {
     }
 });
 
+
 function activateFullscreen() {
-    canvas.requestFullscreen();
+    let frame = document.getElementById('canvas-frame');
+    frame.requestFullscreen();
+    frame.style.backgroundSize = '84% 100%';
 }
+
+
