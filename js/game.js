@@ -74,3 +74,6 @@ window.addEventListener("keyup", (e) => {
     }
 });
 
+function activateFullscreen() {
+    canvas.requestFullscreen();
+}
