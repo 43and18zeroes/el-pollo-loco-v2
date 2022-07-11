@@ -8,7 +8,10 @@ body {
 }
 
 canvas {
-    background-color: black;
+    background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
+    background-size: 84% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     display: block;
 }
 
@@ -51,6 +54,7 @@ canvas {
     right: 0;
     display: flex;
     justify-content: center;
+    z-index: 10;
 }
 
 #startbutton button {
