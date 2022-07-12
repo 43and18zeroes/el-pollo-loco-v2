@@ -4,10 +4,10 @@ let keyboard = new Keyboard(); // Instances keyboard object
 
 
 function init() {
+    canvas = document.getElementById('canvas');
     setTimeout(() => {
         document.getElementById("prestart").style.display = "none";
     }, 400);
-    canvas = document.getElementById('canvas');
 }
 
 
@@ -21,7 +21,6 @@ function startGame() {
     setTimeout(() => {
         document.getElementById("pepestart").style.display = "none";
     }, 1500);
-    // test comment
 }
 
 
