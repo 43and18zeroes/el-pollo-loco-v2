@@ -11,11 +11,13 @@ function init() {
 function startGame() {
     initLevel();
     world = new World(canvas, keyboard);
-    /* wait 30 ms to avoid black screen caused by loading */
+    document.getElementById("pepestart").style.display = "inline";
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("startscreen").style.display = "none";
+    /* wait to avoid black screen caused by loading */
     setTimeout(() => {
-        document.getElementById("startbutton").style.display = "none";
-        document.getElementById("startscreen").style.display = "none";
-    }, 30);
+        document.getElementById("pepestart").style.display = "none";
+    }, 1500);
     // test comment
 }
 

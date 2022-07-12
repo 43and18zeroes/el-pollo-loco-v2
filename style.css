@@ -36,6 +36,15 @@ canvas {
     height: 100%;
 }
 
+#pepestart {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: none;
+}
+
+
 #enter-fullscreen {
     position: absolute;
     right: 0;
