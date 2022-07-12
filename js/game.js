@@ -79,6 +79,7 @@ function activateFullscreen() {
     let canvas = document.getElementById('canvas');
     canvas.requestFullscreen();
     canvas.classList.add('fullscreen-res');
+    canvas.style.backgroundImage = 'none';
 }
 
 
