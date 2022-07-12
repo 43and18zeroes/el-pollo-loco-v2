@@ -10,6 +10,17 @@ body {
     margin: 0px;
 }
 
+#prestart {
+    width: 720px;
+    height: 480px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+}
+
 canvas {
     background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
     background-position: center;

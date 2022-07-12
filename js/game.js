@@ -4,6 +4,9 @@ let keyboard = new Keyboard(); // Instances keyboard object
 
 
 function init() {
+    setTimeout(() => {
+        document.getElementById("prestart").style.display = "none";
+    }, 400);
     canvas = document.getElementById('canvas');
 }
 
