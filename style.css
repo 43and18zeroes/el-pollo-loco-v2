@@ -9,7 +9,6 @@ body {
 
 canvas {
     background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
-    background-size: 84% 100%;
     background-position: center;
     background-repeat: no-repeat;
     display: block;
@@ -36,6 +35,10 @@ canvas {
     right: 0;
     bottom: 0;
     padding: 4px 8px;
+}
+
+.fullscreen-res {
+    background-size: 84% 100%;
 }
 
 .icon__control {

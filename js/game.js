@@ -74,6 +74,11 @@ window.addEventListener("keyup", (e) => {
     }
 });
 
+
 function activateFullscreen() {
+    let canvas = document.getElementById('canvas');
     canvas.requestFullscreen();
+    canvas.classList.add('fullscreen-res');
 }
+
+
