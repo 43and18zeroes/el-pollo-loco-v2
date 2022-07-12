@@ -9,6 +9,7 @@ class World {
     enemies = level1.enemies;
     clouds = level1.clouds;
     backgroundObjects = level1.backgroundObjects;
+    game_music = new Audio('audio/mexican-huapango-banda-2715.mp3');
 
 
     canvas;
@@ -27,6 +28,7 @@ class World {
         this.draw();
         this.setWorld();
         this.run();
+        this.game_music.play();
     }
 
     setWorld() {
