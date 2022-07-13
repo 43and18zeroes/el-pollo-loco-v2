@@ -11,7 +11,6 @@ class World {
     backgroundObjects = level1.backgroundObjects;
     game_music = new Audio('audio/mexican-huapango-banda-2715.mp3');
 
-
     canvas;
     ctx;
     keyboard;
@@ -28,6 +27,7 @@ class World {
         this.draw();
         this.setWorld();
         this.run();
+        this.game_music.volume = 0.2;
         this.game_music.play();
     }
 
