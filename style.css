@@ -1,12 +1,12 @@
 body {
-    background-image: url('img/background/desert.jpg');
+    background-image: url("img/background/desert.jpg");
     background-position: 50% 50%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #424242;
     margin: 0px;
 }
@@ -20,10 +20,19 @@ body {
     top: 0;
     height: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prestart div {
+    color: gold;
+    font-family: "Bungee", cursive;
+    font-size: 50px;
 }
 
 canvas {
-    background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
+    background-image: url("img/9.Intro _ Outro Image/Start Screen/Opción 1.png");
     background-position: center;
     background-repeat: no-repeat;
     display: block;
@@ -55,7 +64,6 @@ canvas {
     height: 100%;
     display: none;
 }
-
 
 #enter-fullscreen {
     position: absolute;
@@ -96,8 +104,8 @@ canvas {
     border: 3px solid #424242;
     border-radius: 50px;
     padding-right: 13px;
-    background: rgb(255,196,34);
-    background: linear-gradient(0deg, rgba(255,196,34,1) 0%, rgba(255,223,0,1) 35%, rgba(255,196,34,1) 100%);
+    background: rgb(255, 196, 34);
+    background: linear-gradient(0deg, rgba(255, 196, 34, 1) 0%, rgba(255, 223, 0, 1) 35%, rgba(255, 196, 34, 1) 100%);
     cursor: pointer;
 }
 
@@ -106,10 +114,10 @@ canvas {
     font-weight: 800;
 }
 
-
 /* mobile view --------------- */
 @media only screen and (max-width: 720px) {
-    canvas, #canvas-frame {
+    canvas,
+    #canvas-frame {
         width: 100%;
     }
 
@@ -119,7 +127,8 @@ canvas {
 }
 
 @media only screen and (max-height: 480px) {
-    canvas, #canvas-frame {
+    canvas,
+    #canvas-frame {
         height: 100vh;
     }
 
@@ -129,7 +138,8 @@ canvas {
 }
 
 @media only screen and (max-width: 600px) {
-    #startbutton button span, #startbutton button {
+    #startbutton button span,
+    #startbutton button {
         font-size: 30px;
         padding-right: 9px;
     }
