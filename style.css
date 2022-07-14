@@ -117,7 +117,7 @@ canvas {
 /* mobile view --------------- */
 @media only screen and (max-width: 720px) {
     canvas,
-    #canvas-frame {
+    #canvas-frame, #prestart {
         width: 100%;
     }
 
@@ -128,7 +128,7 @@ canvas {
 
 @media only screen and (max-height: 480px) {
     canvas,
-    #canvas-frame {
+    #canvas-frame, #prestart {
         height: 100vh;
     }
 
