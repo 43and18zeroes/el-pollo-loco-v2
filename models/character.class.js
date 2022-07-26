@@ -57,22 +57,38 @@ class Character extends MovableObject {
         this.animate();
     }
 
+    moveRight() {
+        this.x += this.speed;
+        // character move right -> sound plays
+        this.otherDirection = false;
+        this.walking_sound.play();
+    }
+
+    moveLeft() {
+        this.x -= this.speed;
+        this.otherDirection = true;
+        this.walking_sound.play();
+    }
+
+    beginningOfLevelReached() {
+        return !(this.x > 0);
+    }
+
+    endOfLevelIsReached() {
+        return !(this.x < this.world.level.level_end_x);
+    }
 
     animate() {
 
         setInterval(() => {
             // sound pauses during a draw() cycle in order to stop playing when character isn't walking
             this.walking_sound.pause();
-            if (this.world.keyboard.RIGHT == true && this.x < this.world.level.level_end_x) {
+            if (this.world.keyboard.RIGHT && !this.endOfLevelIsReached()) {
                 this.moveRight();
-                this.otherDirection = false;
-                this.walking_sound.play();
             }
 
-            if (this.world.keyboard.LEFT == true && this.x > 0) {
+            if (this.world.keyboard.LEFT && !this.beginningOfLevelReached()) {
                 this.moveLeft();
-                this.otherDirection = true;
-                this.walking_sound.play();
             }
 
             if (this.world.keyboard.SPACE == true && !this.isAboveGround()) {
