@@ -1,5 +1,0 @@
-class Touchbutton extends DrawableObject {
-
-    
-
-}
