@@ -83,17 +83,17 @@ class Character extends MovableObject {
         setInterval(() => {
             // sound pauses during a draw() cycle in order to stop playing when character isn't walking
             this.walking_sound.pause();
-            if (this.world.keyboard.RIGHT && !this.endOfLevelIsReached()) {
+            if (this.world.keyboard.RIGHT &&
+                 !this.endOfLevelIsReached())
                 this.moveRight();
-            }
 
-            if (this.world.keyboard.LEFT && !this.beginningOfLevelReached()) {
+            if (this.world.keyboard.LEFT &&
+                 !this.beginningOfLevelReached())
                 this.moveLeft();
-            }
 
-            if (this.world.keyboard.SPACE == true && !this.isAboveGround()) {
+            if (this.world.keyboard.SPACE &&
+                 !this.isAboveGround())
                 this.jump();
-            } 
 
             // changes cam position inverted to the x of character
             // + 100 so character is away from the canvas border
