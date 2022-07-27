@@ -140,7 +140,6 @@ class Character extends MovableObject {
 
 
     animate() {
-
         setInterval(() => {
             this.move();
         }, 1000 / 60);
@@ -148,7 +147,6 @@ class Character extends MovableObject {
         setInterval(() => {
             this.play();
         }, 50);
-
     }
 
 
