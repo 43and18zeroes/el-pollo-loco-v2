@@ -77,28 +77,40 @@ class Character extends MovableObject {
     endOfLevelIsReached() {
         return !(this.x < this.world.level.level_end_x);
     }
+    
+    canMoveRight() {
+        return this.world.keyboard.RIGHT && !this.endOfLevelIsReached();
+    }
+
+    canMoveLeft() {
+        return this.world.keyboard.LEFT && !this.beginningOfLevelReached();
+    }
+
+    canJump() {
+        return this.world.keyboard.SPACE && !this.isAboveGround();
+    }
+
+    move() {
+        // sound pauses during a draw() cycle in order to stop playing when character isn't walking
+        this.walking_sound.pause();
+        if (this.canMoveRight())
+            this.moveRight();
+
+        if (this.canMoveLeft())
+            this.moveLeft();
+
+        if (this.canJump())
+            this.jump();
+
+        // changes cam position inverted to the x of character
+        // + 100 so character is away from the canvas border
+        this.world.camera_x = -this.x + 100;
+    }
 
     animate() {
 
         setInterval(() => {
-            // sound pauses during a draw() cycle in order to stop playing when character isn't walking
-            this.walking_sound.pause();
-            if (this.world.keyboard.RIGHT &&
-                 !this.endOfLevelIsReached())
-                this.moveRight();
-
-            if (this.world.keyboard.LEFT &&
-                 !this.beginningOfLevelReached())
-                this.moveLeft();
-
-            if (this.world.keyboard.SPACE &&
-                 !this.isAboveGround())
-                this.jump();
-
-            // changes cam position inverted to the x of character
-            // + 100 so character is away from the canvas border
-            this.world.camera_x = -this.x + 100;
-
+            this.move();
         }, 1000 / 60);
 
 
