@@ -1,0 +1,35 @@
+@media only screen and (max-width: 720px) {
+    canvas,
+    #canvas-frame, #prestart, #prestart img, #pepestart img {
+        width: 100%;
+    }
+
+    h1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas,
+    #canvas-frame, #pepestart img {
+        height: 100vh;
+    }
+
+    #prestart, #prestart img {
+        height: 100vh;
+        max-width: 100%;
+    }
+
+
+    h1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #startbutton button span,
+    #startbutton button {
+        font-size: 30px;
+        padding-right: 9px;
+    }
+}

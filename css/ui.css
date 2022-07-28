@@ -1,0 +1,62 @@
+.control__buttons {
+    width: var(--control-button-size);
+}
+
+#arrowleft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#arrowleft img {
+    display: inline-block;
+}
+
+#enter-fullscreen {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 4px 8px;
+}
+
+.fullscreen-res {
+    background-size: 84.375% 100%;
+}
+
+.icon__control {
+    cursor: pointer;
+}
+
+.icon__control span {
+    font-size: calc(var(--control-button-size) * 0.66);
+    color: white;
+}
+
+#startbutton {
+    position: absolute;
+    bottom: 80%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+#startbutton button {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 200;
+    color: #424242;
+    border: 3px solid #424242;
+    border-radius: 50px;
+    padding-right: 13px;
+    background: rgb(255, 196, 34);
+    background: linear-gradient(0deg, rgba(255, 196, 34, 1) 0%, rgba(255, 223, 0, 1) 35%, rgba(255, 196, 34, 1) 100%);
+    cursor: pointer;
+}
+
+#startbutton button span {
+    font-size: 50px;
+    font-weight: 800;
+}

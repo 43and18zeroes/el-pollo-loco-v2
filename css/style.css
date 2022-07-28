@@ -1,0 +1,71 @@
+:root {
+    --control-button-size: 100px;
+}
+
+
+body {
+    background-image: url("img/background/desert.jpg");
+    background-position: 50% 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    color: #424242;
+    margin: 0px;
+}
+
+#prestart {
+    width: 720px;
+    height: 480px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prestart div {
+    color: gold;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 50px;
+}
+
+canvas {
+    background-image: url("img/9.Intro _ Outro Image/Start Screen/Opción 1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+#canvas-frame {
+    position: relative;
+    display: block;
+}
+
+#startscreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+#startscreen img {
+    width: 720px;
+    height: 480px;
+    width: 100%;
+    height: 100%;
+}
+
+#pepestart {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: none;
+}
