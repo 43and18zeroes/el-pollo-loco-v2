@@ -1,3 +1,8 @@
+:root {
+    --control-button-size: 100px;
+}
+
+
 body {
     background-image: url("img/background/desert.jpg");
     background-position: 50% 50%;
@@ -65,10 +70,24 @@ canvas {
     display: none;
 }
 
+.control__buttons {
+    width: var(--control-button-size);
+}
+
+#arrowleft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#arrowleft img {
+    display: inline-block;
+}
+
 #enter-fullscreen {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     padding: 4px 8px;
 }
 
@@ -81,7 +100,7 @@ canvas {
 }
 
 .icon__control span {
-    font-size: 36px;
+    font-size: calc(var(--control-button-size) * 0.66);
     color: white;
 }
 

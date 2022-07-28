@@ -43,23 +43,32 @@
 <body onload="init()">
 
     <div id="canvas-frame"  width="720" height="480">
+
         <div id="prestart">
-            <img src="img/prestart/prestart.jpg" alt="">
+            <img src="img/prestart/prestart.jpg" alt="" id="arrowleft">
         </div>
-        <canvas id="canvas" width="720" height="480">
-            
+
+        <canvas id="canvas" width="720" height="480">  
         </canvas>
+
+        <div class="icon__control" id="arrowleft">
+            <img class="control__buttons" src="img/buttons/buttons_img/arrow-left.png" alt="">
+        </div>
+
         <div class="icon__control" id="enter-fullscreen" onclick="activateFullscreen();">
             <span class="material-symbols-outlined">
                 fullscreen
             </span>
         </div>
+
         <div id="startscreen">
             <img src="img/9.Intro _ Outro Image/Start Screen/Opción 1.png" alt="">
         </div>
+
         <div id="startbutton" onclick="startGame()">
             <button><span class="material-symbols-outlined">play_circle</span> PLAY</button>
         </div>
+        
         <div id="pepestart">
             <img src="img/pepe_start/pepe-start.jpg" alt="">
         </div>
