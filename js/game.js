@@ -8,6 +8,8 @@ function init() {
     setTimeout(() => {
         document.getElementById("prestart").style.display = "none";
     }, 400);
+
+    initTouchButtons();
 }
 
 
@@ -78,6 +80,44 @@ window.addEventListener("keyup", (e) => {
     }
 });
 
+function initTouchButtons() {
+    document.getElementById('arrowleft').addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        keyboard.LEFT = true;
+    });
+
+    document.getElementById('arrowleft').addEventListener('touchend', (event) => {
+        keyboard.LEFT = false;
+    });
+
+    document.getElementById('arrowright').addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        keyboard.RIGHT = true;
+    });
+
+    document.getElementById('arrowright').addEventListener('touchend', (event) => {
+        keyboard.RIGHT = false;
+    });
+
+    document.getElementById('arrowjump').addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        keyboard.SPACE = true;
+    });
+
+    document.getElementById('arrowjump').addEventListener('touchend', (event) => {
+        keyboard.SPACE = false;
+    });
+
+    document.getElementById('arrowthrow').addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        keyboard.D = true;
+    });
+
+    document.getElementById('arrowthrow').addEventListener('touchend', (event) => {
+        keyboard.D = false;
+    });
+}
+
 
 function activateFullscreen() {
     let canvas = document.getElementById('canvas');
@@ -85,5 +125,3 @@ function activateFullscreen() {
     canvas.classList.add('fullscreen-res');
     canvas.style.backgroundImage = 'none';
 }
-
-

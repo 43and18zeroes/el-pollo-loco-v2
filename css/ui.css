@@ -1,36 +1,57 @@
-.control__buttons {
+:root {
+    --control-button-size: 80px;
+}
+
+
+.button__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: calc(var(--control-button-size) / 12.5);
+}
+
+.upper__buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lower__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.lower__buttons__left {
+    display: flex;
+
+}
+
+.lower__buttons__right {
+    display: flex;
+    flex-direction: column;
+}
+
+.control__button__style {
     width: var(--control-button-size);
 }
 
-#arrowleft {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
+/* fullscreen button */
 
-#arrowleft img {
-    display: inline-block;
-}
-
-#enter-fullscreen {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 4px 8px;
+#enterfullscreen span {
+    font-size: 66px;
+    color: white;
 }
 
 .fullscreen-res {
     background-size: 84.375% 100%;
 }
 
-.icon__control {
-    cursor: pointer;
-}
-
-.icon__control span {
-    font-size: calc(var(--control-button-size) * 0.66);
-    color: white;
-}
+/* start screen */
 
 #startbutton {
     position: absolute;

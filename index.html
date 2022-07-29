@@ -46,22 +46,47 @@
 
     <div id="canvas-frame"  width="720" height="480">
 
+        <!-- Prestart -->
+
         <div id="prestart">
             <img src="img/prestart/prestart.jpg" alt="">
         </div>
 
+        <!-- Canvas -->
+
         <canvas id="canvas" width="720" height="480">  
         </canvas>
 
-        <div class="icon__control" id="arrowleft">
-            <img class="control__buttons" src="img/buttons/buttons_img/arrow-left.png" alt="">
+        <!-- UI Buttons -->
+
+        <div class="button__overlay">
+
+
+            <div class="upper__buttons">
+                <div id="enterfullscreen" onclick="activateFullscreen();">
+                    <span class="material-symbols-outlined">
+                        fullscreen
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="lower__buttons">
+
+                <div class="lower__buttons__left">
+                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-left.png" alt="" id="arrowleft">
+                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-right.png" alt="" id="arrowright">
+                </div>
+
+                <div class="lower__buttons__right">
+                    <img class="control__button__style" src="img/buttons/buttons_img/attack.png" alt="" id="arrowthrow">
+                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-up.png" alt="" id="arrowjump">
+                </div>
+
+            </div>
         </div>
 
-        <div class="icon__control" id="enter-fullscreen" onclick="activateFullscreen();">
-            <span class="material-symbols-outlined">
-                fullscreen
-            </span>
-        </div>
+        <!-- Startscreen -->
 
         <div id="startscreen">
             <img src="img/9.Intro _ Outro Image/Start Screen/Opción 1.png" alt="">
