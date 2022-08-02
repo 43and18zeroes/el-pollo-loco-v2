@@ -5,8 +5,8 @@ class Coin extends CollectableObject {
 
     constructor() {
         super().loadImage('img/8.Coin/Moneda1.png');
-        this.x = Math.floor(Math.random() * 2000);
-        this.y = Math.floor(Math.random() * 480);
+        this.x = 400 + Math.floor(Math.random() * 2000);
+        this.y = Math.floor(Math.random() * 370);
     }
 
 }
