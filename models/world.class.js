@@ -8,6 +8,7 @@ class World {
     level = level1;
     enemies = level1.enemies;
     clouds = level1.clouds;
+    coins = level1.coins;
     backgroundObjects = level1.backgroundObjects;
     game_music = new Audio('audio/mexican-huapango-banda-2715.mp3');
 
@@ -44,6 +45,7 @@ class World {
 
         this.addObjectsToMap(this.level.backgroundObjects);
         this.addObjectsToMap(this.level.clouds);
+        this.addObjectsToMap(this.level.coins);
         this.addObjectsToMap(this.level.enemies);
 
         this.addObjectsToMap(this.throwableObjects);
