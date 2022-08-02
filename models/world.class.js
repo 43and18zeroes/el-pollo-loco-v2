@@ -101,7 +101,8 @@ class World {
 
     run() {
         setInterval(() => {
-            this.checkCollisions();
+            this.checkCollisionsChicken();
+            this.checkCollisionsCoins();
             this.checkThrowObjects();
         }, 50);
     }
@@ -118,12 +119,20 @@ class World {
         }
     }
 
-    checkCollisions() {
+    checkCollisionsChicken() {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.character.hit();
                 // Manipulate statusbar display
                 this.statusBar.setPercentage(this.character.energy);
+            }
+        });
+    }
+
+    checkCollisionsCoins() {
+        this.level.coins.forEach((coin) => {
+            if (this.character.isColliding(coin)) {
+                this.character.coinCollected();
             }
         });
     }

@@ -32,4 +32,8 @@ class DrawableObject {
         ctx.drawImage(this.img, this.x, this.y, this.width.this.height);
     }
 
+    coinCollected() {
+        console.log("coin collected");
+    }
+
 }
