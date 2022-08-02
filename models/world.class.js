@@ -27,7 +27,7 @@ class World {
         this.draw();
         this.setWorld();
         this.run();
-        this.game_music.volume = 0.2;
+        this.game_music.volume = 0.01;
         this.game_music.play();
     }
 
