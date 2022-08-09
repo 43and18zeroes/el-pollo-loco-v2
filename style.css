@@ -65,13 +65,6 @@ canvas {
     display: none;
 }
 
-#enter-fullscreen {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 4px 8px;
-}
-
 .fullscreen-res {
     background-size: 84.375% 100%;
 }

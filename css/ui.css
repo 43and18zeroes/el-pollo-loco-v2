@@ -45,6 +45,7 @@
 #enterfullscreen span {
     font-size: 66px;
     color: white;
+    cursor: pointer;
 }
 
 .fullscreen-res {
