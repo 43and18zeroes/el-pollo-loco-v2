@@ -135,6 +135,8 @@ class World {
             if (this.character.isColliding(coin)) {
                 const coinToRemove = this.coins.indexOf(coin);
                 this.coins.splice(coinToRemove, 1);
+                this.character.coinsAmount++
+                console.log("coinsAmount", this.character.coinsAmount);
             }
         });
     }
