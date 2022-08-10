@@ -13,7 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
     <script src="models/drawable-object.class.js"></script>
@@ -42,11 +43,19 @@
     <!-- <script src="models/static-screen.class.js"></script>
     <script src="models/start-screen.class.js"></script> -->
 
+
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body onload="init()">
 
-    <div id="canvas-frame"  width="720" height="480">
+    <div id="canvas-frame" width="720" height="480">
 
         <!-- Prestart -->
 
@@ -56,7 +65,7 @@
 
         <!-- Canvas -->
 
-        <canvas id="canvas" width="720" height="480">  
+        <canvas id="canvas" width="720" height="480">
         </canvas>
 
         <!-- UI Buttons -->
@@ -76,13 +85,16 @@
             <div class="lower__buttons">
 
                 <div class="lower__buttons__left">
-                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-left.png" alt="" id="arrowleft">
-                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-right.png" alt="" id="arrowright">
+                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-left.png" alt=""
+                        id="arrowleft">
+                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-right.png" alt=""
+                        id="arrowright">
                 </div>
 
                 <div class="lower__buttons__right">
                     <img class="control__button__style" src="img/buttons/buttons_img/attack.png" alt="" id="arrowthrow">
-                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-up.png" alt="" id="arrowjump">
+                    <img class="control__button__style" src="img/buttons/buttons_img/arrow-up.png" alt=""
+                        id="arrowjump">
                 </div>
 
             </div>
@@ -97,14 +109,14 @@
         <div id="startbutton" onclick="startGame()">
             <button><span class="material-symbols-outlined">play_circle</span> PLAY</button>
         </div>
-        
+
         <div id="pepestart">
             <img src="img/pepe_start/pepe-start.jpg" alt="">
         </div>
-        
+
     </div>
 
-    
+
 
 </body>
 

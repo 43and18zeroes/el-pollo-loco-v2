@@ -32,7 +32,7 @@ body {
 }
 
 canvas {
-    background-image: url("img/9.Intro _ Outro Image/Start Screen/Opción 1.png");
+    /* background-image: url("img/9.Intro _ Outro Image/Start Screen/Opción 1.png"); */
     background-position: center;
     background-repeat: no-repeat;
     display: block;

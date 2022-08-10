@@ -5,6 +5,7 @@ class Character extends MovableObject {
     width = 120;
     height = 250;
     speed = 10;
+    coinsAmount = 0;
 
     offset = {
         top: 120,
