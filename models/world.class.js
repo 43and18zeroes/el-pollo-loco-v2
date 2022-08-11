@@ -1,7 +1,8 @@
 class World {
 
     character = new Character();
-    statusBar = new StatusBar();
+    healthBar = new HealthBar();
+    coinAmountBar = new coinAmountBar();
     // startScreen = new StartScreen;
     throwableObjects = [];
 
@@ -54,7 +55,8 @@ class World {
 
         this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
         /* -------- Space for fixed objects ------------- */
-        this.addToMap(this.statusBar);
+        this.addToMap(this.healthBar);
+        this.addToMap(this.coinAmountBar);
         // this.addToMap(this.startScreen);
         this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
 
@@ -123,8 +125,8 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.character.hit();
-                // Manipulate statusbar display
-                this.statusBar.setPercentage(this.character.energy);
+                // Manipulate healthbar display
+                this.healthBar.setPercentageHealthBar(this.character.energy);
             }
         });
     }
