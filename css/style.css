@@ -10,7 +10,7 @@
     font-weight: 400;
     /* path relative to the location of the css file (./css/style.css) */
     src:url("../fonts/MaterialIconsOutlined-Regular.otf") format("truetype");
- }
+}
  
  .material-symbols-outlined {
    font-family: 'Material Icons';
@@ -35,7 +35,7 @@
  
    /* Support for IE. */
    font-feature-settings: 'liga';
- }
+}
 
 body {
     background-image: url("../img/background/desert.jpg");

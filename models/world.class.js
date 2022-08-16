@@ -68,7 +68,18 @@ class World {
         requestAnimationFrame(function () {
             self.draw();
         });
+
+        this.drawCharacterBoxes(this.character);
     }
+
+    drawCharacterBoxes(object) {
+        this.ctx.beginPath();
+        this.ctx.rect(120, object.y, object.width, object.height);
+        this.ctx.stroke();
+        console.log("object.x", object.x);
+        console.log("this.character.x", this.character.x);
+    }
+
 
     addObjectsToMap(objects) {
         objects.forEach(o => {
@@ -131,7 +142,7 @@ class World {
         });
     }
 
-    
+
     checkCollisionsCoins() {
         this.level.coins.forEach((coin) => {
             if (this.character.isColliding(coin)) {
