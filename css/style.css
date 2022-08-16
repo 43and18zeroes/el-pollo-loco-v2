@@ -1,5 +1,6 @@
 @font-face {
     font-family: "zabars";
+    /* path relative to the location of the css file (./css/style.css */
     src:url("../fonts/zabars.ttf") format("truetype");
 }
 
@@ -7,7 +8,8 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src:url("../fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].ttf") format("truetype");
+    /* path relative to the location of the css file (./css/style.css */
+    src:url("../fonts/MaterialIconsOutlined-Regular.otf") format("truetype");
  }
  
  .material-symbols-outlined {
