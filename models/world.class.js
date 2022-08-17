@@ -69,7 +69,7 @@ class World {
             self.draw();
         });
 
-        
+
     }
 
     addObjectsToMap(objects) {
@@ -79,34 +79,28 @@ class World {
     }
 
     addToMap(mo) {
-        // if object has an otherDirection var which is true
         if (mo.otherDirection) {
-            // save current attributes of context
-            this.ctx.save();
-            // mirror image 
-            this.ctx.translate(mo.width, 0);
-            // invert width of object for the correct position
-            this.ctx.scale(-1, 1);
-            // x-axis was turned from left to right, so the x value of object must be changed too
-            mo.x = mo.x * -1;
+            this.flipImage(mo);
         }
 
-        // insert image
-        this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
+        mo.draw(this.ctx);
+        mo.drawFrame(this.ctx);
 
-        this.ctx.beginPath();
-        this.ctx.lineWidth = '5';
-        this.ctx.strokeStyle = 'blue';
-        this.ctx.rect(mo.x, mo.y, mo.width, mo.height);
-        this.ctx.stroke();
-
-        // if object has an otherDirection var which is true (again)
         if (mo.otherDirection) {
-            // x-axis was turned from left to right, so the x value of object must be changed too
-            mo.x = mo.x * -1;
-            // restore context so all other images get inserted unmirrored
-            this.ctx.restore();
+            this.flipImageBack(mo);
         }
+    }
+
+    flipImage(mo) {
+        this.ctx.save();
+        this.ctx.translate(mo.width, 0);
+        this.ctx.scale(-1, 1);
+        mo.x = mo.x * -1;
+    }
+
+    flipImageBack(mo) {
+        mo.x = mo.x * -1;
+        this.ctx.restore();
     }
 
     run() {
