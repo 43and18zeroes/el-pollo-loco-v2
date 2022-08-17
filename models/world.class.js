@@ -86,12 +86,23 @@ class World {
 
         mo.draw(this.ctx);
 
-        mo.drawHitbox(this.ctx);
-        mo.drawFrame(this.ctx);
+        if(this.checkIfOffsetExists(mo)) {
+            mo.drawHitbox(this.ctx);
+        } else {
+            mo.drawFrame(this.ctx);
+        }
+        
 
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
+    }
+
+    checkIfOffsetExists(mo) {
+        return !(mo.offset.top == 0 &&
+            mo.offset.bottom == 0 &&
+            mo.offset.left == 0 &&
+            mo.offset.right == 0);
     }
 
 
