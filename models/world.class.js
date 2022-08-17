@@ -159,7 +159,7 @@ class World {
                 const coinToRemove = this.coins.indexOf(coin);
                 this.coins.splice(coinToRemove, 1);
                 this.character.coinsAmount++
-                console.log("coinsAmount", this.character.coinsAmount);
+                this.coinAmountBar.setPercentageCoinBarAmount(this.character.coinsAmount);
             }
         });
     }
