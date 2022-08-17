@@ -50,6 +50,10 @@ body {
     margin: 0px;
 }
 
+h1 {
+    font-size: 60px;
+    letter-spacing: 4px;
+}
 
 #prestart {
     width: 720px;
