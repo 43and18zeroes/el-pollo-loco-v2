@@ -33,6 +33,7 @@ class World {
         this.game_music.play();
     }
 
+
     setWorld() {
         this.character.world = this;
     }
@@ -68,9 +69,8 @@ class World {
         requestAnimationFrame(function () {
             self.draw();
         });
-
-
     }
+
 
     addObjectsToMap(objects) {
         objects.forEach(o => {
@@ -78,18 +78,22 @@ class World {
         })
     }
 
+
     addToMap(mo) {
         if (mo.otherDirection) {
             this.flipImage(mo);
         }
 
         mo.draw(this.ctx);
+
+        mo.drawHitbox(this.ctx);
         mo.drawFrame(this.ctx);
 
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
     }
+
 
     flipImage(mo) {
         this.ctx.save();
@@ -98,10 +102,12 @@ class World {
         mo.x = mo.x * -1;
     }
 
+
     flipImageBack(mo) {
         mo.x = mo.x * -1;
         this.ctx.restore();
     }
+
 
     run() {
         setInterval(() => {
@@ -110,6 +116,7 @@ class World {
             this.checkThrowObjects();
         }, 50);
     }
+
 
     checkThrowObjects() {
         if (this.keyboard.D && this.alreadyThrown == false) {
@@ -122,6 +129,7 @@ class World {
             }, 1000);
         }
     }
+
 
     checkCollisionsChicken() {
         this.level.enemies.forEach((enemy) => {
@@ -144,5 +152,4 @@ class World {
             }
         });
     }
-
 }
