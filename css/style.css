@@ -11,8 +11,8 @@
     /* path relative to the location of the css file (./css/style.css) */
     src:url("../fonts/MaterialIconsOutlined-Regular.otf") format("truetype");
 }
- 
- .material-symbols-outlined {
+
+.material-symbols-outlined {
    font-family: 'Material Icons';
    font-weight: normal;
    font-style: normal;
