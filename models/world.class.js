@@ -69,17 +69,8 @@ class World {
             self.draw();
         });
 
-        this.drawCharacterBoxes(this.character);
+        
     }
-
-    drawCharacterBoxes(object) {
-        this.ctx.beginPath();
-        this.ctx.rect(120, object.y, object.width, object.height);
-        this.ctx.stroke();
-        console.log("object.x", object.x);
-        console.log("this.character.x", this.character.x);
-    }
-
 
     addObjectsToMap(objects) {
         objects.forEach(o => {
@@ -102,6 +93,12 @@ class World {
 
         // insert image
         this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
+
+        this.ctx.beginPath();
+        this.ctx.lineWidth = '5';
+        this.ctx.strokeStyle = 'blue';
+        this.ctx.rect(mo.x, mo.y, mo.width, mo.height);
+        this.ctx.stroke();
 
         // if object has an otherDirection var which is true (again)
         if (mo.otherDirection) {
