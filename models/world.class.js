@@ -86,12 +86,12 @@ class World {
 
         mo.draw(this.ctx);
 
-        if(this.checkIfOffsetExists(mo)) {
+        if (this.checkIfOffsetExists(mo)) {
             mo.drawHitbox(this.ctx);
         } else {
             mo.drawFrame(this.ctx);
         }
-        
+
 
         if (mo.otherDirection) {
             this.flipImageBack(mo);
@@ -158,9 +158,10 @@ class World {
             if (this.character.isColliding(coin)) {
                 const coinToRemove = this.coins.indexOf(coin);
                 this.coins.splice(coinToRemove, 1);
-                this.character.coinsAmount++
+                this.character.coinsAmount++;
                 this.coinAmountBar.setPercentageCoinBarAmount(this.character.coinsAmount);
             }
         });
     }
+
 }

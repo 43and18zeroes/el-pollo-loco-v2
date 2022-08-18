@@ -9,6 +9,8 @@ class coinAmountBar extends StatusBar {
         'img/7.Marcadores/Barra/Marcador moneda/Verde/100_ copia 2.png',
     ];
 
+    maxCoinAmountBarValue = this.IMAGES_COINAMOUNTBAR.length;
+
     y = 56;
 
     constructor() {
@@ -18,8 +20,14 @@ class coinAmountBar extends StatusBar {
     }
 
     setPercentageCoinBarAmount(coinsCollected) {
+        if (this.maxCoinAmountBarValueReached(coinsCollected)) {
+            coinsCollected--;
+        }
         let path = this.IMAGES_COINAMOUNTBAR[coinsCollected];
         this.img = this.imageCache[path];
     }
 
+    maxCoinAmountBarValueReached(coinsCollected) {
+        return coinsCollected == this.maxCoinAmountBarValue;
+    }
 }
