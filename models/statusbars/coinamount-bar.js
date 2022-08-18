@@ -17,9 +17,8 @@ class coinAmountBar extends StatusBar {
         this.setPercentageCoinBarAmount(0);
     }
 
-    setPercentageCoinBarAmount(percentage) {
-        this.percentage = percentage; // => 0 ... 5
-        let path = this.IMAGES_COINAMOUNTBAR[this.resolveImageIndex()];
+    setPercentageCoinBarAmount(coinsCollected) {
+        let path = this.IMAGES_COINAMOUNTBAR[coinsCollected];
         this.img = this.imageCache[path];
     }
 
