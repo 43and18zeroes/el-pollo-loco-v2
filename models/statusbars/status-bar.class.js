@@ -1,8 +1,10 @@
 class StatusBar extends DrawableObject {
 
+    yPositionBars = 56;
+
     percentage = 0;
     x = 40;
-    y = 0;
+    y = this.yPositionBars * 0;
     width = 200;
     height = 60;
 

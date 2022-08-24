@@ -6,12 +6,12 @@ class coinAmountBar extends StatusBar {
         'img/7.Marcadores/Barra/Marcador moneda/Verde/40_  copia 2.png',
         'img/7.Marcadores/Barra/Marcador moneda/Verde/60_  copia 2.png',
         'img/7.Marcadores/Barra/Marcador moneda/Verde/80_  copia 2.png',
-        'img/7.Marcadores/Barra/Marcador moneda/Verde/100_ copia 2.png',
+        'img/7.Marcadores/Barra/Marcador moneda/Verde/100_ copia 2.png'
     ];
 
     maxCoinAmountBarValue = this.IMAGES_COINAMOUNTBAR.length;
 
-    y = 56;
+    y = this.yPositionBars;
 
     constructor() {
         super();
