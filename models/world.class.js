@@ -3,6 +3,7 @@ class World {
     character = new Character();
     healthBar = new HealthBar();
     coinAmountBar = new coinAmountBar();
+    bottleAmountBar = new bottleAmountBar();
     // startScreen = new StartScreen;
     throwableObjects = [];
 
@@ -60,6 +61,7 @@ class World {
         /* -------- Space for fixed objects ------------- */
         this.addToMap(this.healthBar);
         this.addToMap(this.coinAmountBar);
+        this.addToMap(this.bottleAmountBar);
         // this.addToMap(this.startScreen);
         this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
 

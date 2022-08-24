@@ -28,6 +28,6 @@ class bottleAmountBar extends StatusBar {
     }
 
     maxBottleAmountBarValueReached(bottlesCollected) {
-        return bottlesCollected == this.maxCoinAmountBarValue;
+        return bottlesCollected == this.maxBottleAmountBarValue;
     }
 }
