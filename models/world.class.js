@@ -135,17 +135,21 @@ class World {
 
 
     checkThrowObjects() {
-        if (this.keyboard.D && this.alreadyThrown == false) {
-            this.alreadyThrown = true;
-            let bottle = new ThrowableObject(this.character.x + 50, this.character.y + 110);
-            this.throwableObjects.push(bottle);
-
-            setTimeout(() => {
-                this.alreadyThrown = false;
-            }, 1000);
+        if (this.keyboard.D && this.alreadyThrown == false && this.character.bottleAmount > 0) {
+            this.character.bottleAmount--;
+            this.bottleAmountBar.setPercentageBottleBarAmount(this.character.bottleAmount);
+            this.throwBottle();
         }
     }
 
+    throwBottle() {
+        this.alreadyThrown = true;
+        let bottle = new ThrowableObject(this.character.x + 50, this.character.y + 110);
+        this.throwableObjects.push(bottle);
+        setTimeout(() => {
+            this.alreadyThrown = false;
+        }, 1000);
+    }
 
     checkCollisionsChicken() {
         this.level.enemies.forEach((enemy) => {
