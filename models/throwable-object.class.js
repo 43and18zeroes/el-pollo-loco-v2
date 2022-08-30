@@ -21,7 +21,9 @@ class ThrowableObject extends MovableObject {
         'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 10.png',
         'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 11.png',
         'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 12.png'
-    ]
+    ];
+
+    bottle_breaking_sound = new Audio('audio/bottle-break.mp3');
 
     constructor(x, y) {
         super().loadImage('img/6.botella/Rotación/Mesa de trabajo 1 copia 3.png');
