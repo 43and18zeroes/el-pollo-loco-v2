@@ -129,6 +129,7 @@ class World {
             this.checkCollisionsChicken();
             this.checkCollisionsCoins();
             this.checkCollisionsBottles();
+            this.checkCollisionsBottlesToBoss();
             this.checkThrowObjects();
         }, 50);
     }
@@ -180,6 +181,14 @@ class World {
                 this.bottles.splice(bottleToRemove, 1);
                 this.character.bottleAmount++;
                 this.bottleAmountBar.setPercentageBottleBarAmount(this.character.bottleAmount);
+            }
+        });
+    }
+
+    checkCollisionsBottlesToBoss() {
+        this.throwableObjects.forEach((ThrowableObject) => {
+            if (this.enemies[this.enemies.length - 1].isColliding(ThrowableObject)) {
+                console.log("Collision Boss");
             }
         });
     }
