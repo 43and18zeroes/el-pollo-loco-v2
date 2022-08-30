@@ -14,9 +14,19 @@ class ThrowableObject extends MovableObject {
         'img/6.botella/Rotación/Mesa de trabajo 1 copia 6.png'
     ];
 
+    IMAGES_BREAKING = [
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 7.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 8.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 9.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 10.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 11.png',
+        'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 12.png'
+    ]
+
     constructor(x, y) {
         super().loadImage('img/6.botella/Rotación/Mesa de trabajo 1 copia 3.png');
         this.loadImages(this.IMAGES_ROTATING);
+        this.loadImages(this.IMAGES_BREAKING);
         this.x = x;
         this.y = y;
         this.width = 60;
@@ -36,6 +46,13 @@ class ThrowableObject extends MovableObject {
     rotationAnimation() {
         setInterval(() => {
             this.playAnimation(this.IMAGES_ROTATING);
+        }, 100);
+    }
+
+    bottleBreak() {
+        setInterval(() => {
+            console.log("bottle break func");
+            this.playAnimation(this.IMAGES_BREAKING);
         }, 100);
     }
 }
