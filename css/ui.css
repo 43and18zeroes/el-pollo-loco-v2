@@ -42,10 +42,19 @@
 
 /* fullscreen button */
 
+#enterfullscreen {
+    display: flex;
+}
+
 #enterfullscreen span {
     font-size: 66px;
     color: white;
     cursor: pointer;
+}
+
+.keyboard__instructions {
+    font-size: 30px;
+    margin-top: 10px;
 }
 
 .fullscreen-res {
