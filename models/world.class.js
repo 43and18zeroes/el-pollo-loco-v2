@@ -9,6 +9,7 @@ class World {
 
     level = level1;
     enemies = level1.enemies;
+    endBoss = level1.endBoss;
     clouds = level1.clouds;
     coins = level1.coins;
     bottles = level1.bottles;
@@ -52,6 +53,7 @@ class World {
         this.addObjectsToMap(this.level.coins);
         this.addObjectsToMap(this.level.bottles);
         this.addObjectsToMap(this.level.enemies);
+        this.addObjectsToMap(this.level.endBoss);
 
         this.addObjectsToMap(this.throwableObjects);
 
@@ -187,7 +189,7 @@ class World {
 
     checkCollisionsBottlesToBoss() {
         this.throwableObjects.forEach((ThrowableObject) => {
-            if (this.enemies[this.enemies.length - 1].isColliding(ThrowableObject)) {
+            if (this.endBoss[0].isColliding(ThrowableObject)) {
                 this.throwableObjects[this.throwableObjects.length - 1].bottle_breaking_sound.play();
                 this.throwableObjects[this.throwableObjects.length - 1].bottleBreak();
             }
