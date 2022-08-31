@@ -190,8 +190,8 @@ class World {
     checkCollisionsBottlesToBoss() {
         this.throwableObjects.forEach((ThrowableObject) => {
             if (this.endBoss[0].isColliding(ThrowableObject)) {
-                this.throwableObjects[this.throwableObjects.length - 1].bottle_breaking_sound.play();
-                this.throwableObjects[this.throwableObjects.length - 1].bottleBreak();
+                this.throwableObjects[0].bottle_breaking_sound.play();
+                this.throwableObjects[0].bottleBreak();
             }
         });
     }
