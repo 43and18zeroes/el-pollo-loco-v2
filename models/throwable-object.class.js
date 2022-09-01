@@ -53,6 +53,7 @@ class ThrowableObject extends MovableObject {
 
     bottleBreak() {
         setInterval(() => {
+            this.bottle_breaking_sound.play();
             console.log("bottle break func");
             this.playAnimation(this.IMAGES_BREAKING);
         }, 100);
