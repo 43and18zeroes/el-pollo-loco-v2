@@ -189,8 +189,11 @@ class World {
 
     checkCollisionsBottlesToBoss() {
         this.throwableObjects.forEach((ThrowableObject) => {
-            if (this.endBoss[0].isColliding(ThrowableObject)) {
+            if (this.endBoss[0].isColliding(ThrowableObject) && this.throwableObjects.length != 0) {
                 this.throwableObjects[0].bottleBreak();
+                setTimeout(() => {
+                    this.throwableObjects.splice(0, 1); // remove last item of array
+                }, 1000);
             }
         });
     }

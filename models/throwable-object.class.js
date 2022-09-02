@@ -48,6 +48,7 @@ class ThrowableObject extends MovableObject {
     rotationAnimation() {
         setInterval(() => {
             this.playAnimation(this.IMAGES_ROTATING);
+            console.log("function rotationAnimation()");
         }, 100);
     }
 
@@ -55,7 +56,7 @@ class ThrowableObject extends MovableObject {
         setInterval(() => {
             this.bottle_breaking_sound.volume = 0.01;
             this.bottle_breaking_sound.play();
-            console.log("bottle break func");
+            console.log("function bottleBreak()");
             this.playAnimation(this.IMAGES_BREAKING);
         }, 100);
     }
