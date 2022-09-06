@@ -23,6 +23,7 @@ class World {
 
 
     alreadyThrown = false;  // auxiliary var to prevent rapid throwing
+    bossHit = false;  // auxiliary var to time boss hits
 
 
     constructor(canvas, keyboard) {
@@ -190,11 +191,13 @@ class World {
 
     checkCollisionsBottlesToBoss() {
         this.throwableObjects.forEach((ThrowableObject) => {
-            if (this.endBoss[0].isColliding(ThrowableObject) && this.throwableObjects.length != 0) {
+            if (this.endBoss[0].isColliding(ThrowableObject) && this.throwableObjects.length != 0 && this.bossHit != true) {
+                this.bossHit = true;
                 this.endBoss[0].endBossHealth--;
                 this.throwableObjects[0].bottleBreak();
                 setTimeout(() => {
                     this.throwableObjects.splice(0, 1); // remove last item of array
+                    this.bossHit = false;
                 }, 1000);
             }
         });

@@ -4,7 +4,7 @@ class Endboss extends MovableObject {
     height = 400;
     y = 50;
 
-    endBossHealth = 1;
+    endBossHealth = 5;
 
     offset = {
         top: 100,
