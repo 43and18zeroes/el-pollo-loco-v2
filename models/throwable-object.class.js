@@ -7,6 +7,8 @@ class ThrowableObject extends MovableObject {
         right: 5
     }
 
+    throwableObjectsIntervals = [];
+
     IMAGES_ROTATING = [
         'img/6.botella/Rotación/Mesa de trabajo 1 copia 3.png',
         'img/6.botella/Rotación/Mesa de trabajo 1 copia 4.png',
@@ -46,18 +48,19 @@ class ThrowableObject extends MovableObject {
     }
 
     rotationAnimation() {
-        setInterval(() => {
+        let id = setInterval(() => {
             this.playAnimation(this.IMAGES_ROTATING);
             console.log("function rotationAnimation()");
         }, 100);
+        this.throwableObjectsIntervals.push(id);
     }
 
     bottleBreak() {
-        setInterval(() => {
-            this.bottle_breaking_sound.volume = 0.01;
-            this.bottle_breaking_sound.play();
-            console.log("function bottleBreak()");
-            this.playAnimation(this.IMAGES_BREAKING);
-        }, 100);
+        this.throwableObjectsIntervals.forEach(clearInterval);
+        this.bottle_breaking_sound.volume = 0.01;
+        this.bottle_breaking_sound.play();
+        console.log("function bottleBreak()");
+        this.playAnimation(this.IMAGES_BREAKING);
+
     }
 }
