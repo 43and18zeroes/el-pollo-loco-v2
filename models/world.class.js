@@ -133,6 +133,7 @@ class World {
             this.checkCollisionsBottles();
             this.checkCollisionsBottlesToBoss();
             this.checkThrowObjects();
+            this.checkIfBossIsDead();
         }, 50);
     }
 
@@ -190,12 +191,19 @@ class World {
     checkCollisionsBottlesToBoss() {
         this.throwableObjects.forEach((ThrowableObject) => {
             if (this.endBoss[0].isColliding(ThrowableObject) && this.throwableObjects.length != 0) {
+                this.endBoss[0].endBossHealth--;
                 this.throwableObjects[0].bottleBreak();
                 setTimeout(() => {
                     this.throwableObjects.splice(0, 1); // remove last item of array
                 }, 1000);
             }
         });
+    }
+
+    checkIfBossIsDead() {
+        if (this.endBoss[0].endBossHealth < 1) {
+            this.endBoss[0].isDying();
+        }
     }
 
 }

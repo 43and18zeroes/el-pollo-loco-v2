@@ -4,6 +4,8 @@ class Endboss extends MovableObject {
     height = 400;
     y = 50;
 
+    endBossHealth = 1;
+
     offset = {
         top: 100,
         bottom: 100,
@@ -22,11 +24,18 @@ class Endboss extends MovableObject {
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G12.png'
     ];
 
+    IMAGES_DYING =  [
+        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G24.png',
+        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G25.png',
+        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G26.png'
+    ]
+
     constructor() {
         // if even the loadImages should load the images with a problem
         // the loadImage loads the first img just in case
         super().loadImage(this.IMAGES_WALKING[0]);
         this.loadImages(this.IMAGES_WALKING);
+        this.loadImages(this.IMAGES_DYING);
         this.x = 2470;
         this.animate();
     }
@@ -35,5 +44,9 @@ class Endboss extends MovableObject {
         setInterval(() => {
             this.playAnimation(this.IMAGES_WALKING);
         }, 200);
+    }
+
+    isDying() {
+        this.playAnimation(this.IMAGES_DYING);
     }
 }
