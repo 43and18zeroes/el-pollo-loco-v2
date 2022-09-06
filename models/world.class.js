@@ -191,7 +191,7 @@ class World {
 
     checkCollisionsBottlesToBoss() {
         this.throwableObjects.forEach((ThrowableObject) => {
-            if (this.endBoss[0].isColliding(ThrowableObject) && this.throwableObjects.length != 0 && this.bossHit != true) {
+            if (this.properBossHit(ThrowableObject)) {
                 this.bossHit = true;
                 this.endBoss[0].endBossHealth--;
                 this.throwableObjects[0].bottleBreak();
@@ -201,6 +201,18 @@ class World {
                 }, 1000);
             }
         });
+    }
+
+    properBossHit(ThrowableObject) {
+        return this.bottleHitsBoss(ThrowableObject) && this.hasRecentlyBeenHit();
+    }
+
+    bottleHitsBoss(ThrowableObject) {
+        return this.endBoss[0].isColliding(ThrowableObject) && this.throwableObjects.length != 0;
+    }
+
+    hasRecentlyBeenHit() {
+        return this.bossHit != true;
     }
 
     checkIfBossIsDead() {
