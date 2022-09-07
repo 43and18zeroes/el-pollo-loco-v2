@@ -50,7 +50,7 @@ class Endboss extends MovableObject {
         this.endBossIntervals.push(id);
     }
 
-    isDying() {
+    bossDies() {
         this.endBossDead = true;
         this.endBossIntervals.forEach(clearInterval);
         let id = setInterval(() => {
