@@ -6,7 +6,8 @@ class Endboss extends MovableObject {
     height = 400;
     y = 50;
 
-    endBossHealth = 5;
+    endBossHealth = 1;
+    endBossDead = false;
 
     offset = {
         top: 100,
@@ -50,7 +51,11 @@ class Endboss extends MovableObject {
     }
 
     isDying() {
+        this.endBossDead = true;
         this.endBossIntervals.forEach(clearInterval);
-        this.playAnimation(this.IMAGES_DYING);
+        let id = setInterval(() => {
+            this.playAnimation(this.IMAGES_DYING);
+        }, 200);
+        clearInterval(id);
     }
 }

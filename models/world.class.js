@@ -216,7 +216,7 @@ class World {
     }
 
     checkIfBossIsDead() {
-        if (this.endBoss[0].endBossHealth < 1) {
+        if (this.endBoss[0].endBossHealth < 1 && this.endBoss[0].endBossDead == false) {
             this.endBoss[0].isDying();
         }
     }
