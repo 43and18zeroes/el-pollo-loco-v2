@@ -55,7 +55,9 @@ class Endboss extends MovableObject {
         this.endBossIntervals.forEach(clearInterval);
         let id = setInterval(() => {
             this.playAnimation(this.IMAGES_DYING);
+            setTimeout(() => {
+                clearInterval(id);
+            }, 200 / 2 * this.IMAGES_DYING.length);
         }, 200);
-        clearInterval(id);
     }
 }
