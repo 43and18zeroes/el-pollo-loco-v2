@@ -6,7 +6,7 @@ class Endboss extends MovableObject {
     height = 400;
     y = 50;
 
-    endBossHealth = 1;
+    endBossHealth = 2;
     endBossDead = false;
     bossDiesIntervallTimesRun = 0;
 
@@ -32,7 +32,13 @@ class Endboss extends MovableObject {
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G24.png',
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G25.png',
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G26.png'
-    ]
+    ];
+
+    IMAGES_ENRAGED =  [
+        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G21.png',
+        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G22.png',
+        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G23.png'
+    ];
 
     constructor() {
         // if even the loadImages should load the images with a problem
@@ -40,6 +46,7 @@ class Endboss extends MovableObject {
         super().loadImage(this.IMAGES_WALKING[0]);
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_DYING);
+        this.loadImages(this.IMAGES_ENRAGED);
         this.x = 2470;
         this.animate();
     }
@@ -62,5 +69,19 @@ class Endboss extends MovableObject {
                 clearInterval(id);
             }
         }, 200);
+    }
+
+    // bossEnraged() {
+    //     this.endBossIntervals.forEach(clearInterval);
+    //     setInterval(() => {
+    //         this.playAnimation(this.IMAGES_ENRAGED);
+    //     }, 200);
+    // }
+
+    bossEnraged() {
+        let id = setInterval(() => {
+            this.playAnimation(this.IMAGES_ENRAGED);
+        }, 150);
+        this.endBossIntervals.push(id);
     }
 }

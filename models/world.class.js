@@ -199,6 +199,9 @@ class World {
                     this.throwableObjects.splice(0, 1); // remove last item of array
                     this.bossHit = false;
                 }, 1000);
+                if (this.endBoss[0].endBossHealth > 0) {
+                    this.endBoss[0].bossEnraged();
+                }
             }
         });
     }
