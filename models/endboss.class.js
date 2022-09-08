@@ -8,6 +8,7 @@ class Endboss extends MovableObject {
 
     endBossHealth = 1;
     endBossDead = false;
+    bossDiesIntervallTimesRun = 0;
 
     offset = {
         top: 100,
@@ -54,10 +55,12 @@ class Endboss extends MovableObject {
         this.endBossDead = true;
         this.endBossIntervals.forEach(clearInterval);
         let id = setInterval(() => {
-            this.playAnimation(this.IMAGES_DYING);
-            setTimeout(() => {
+            this.loadImage(this.IMAGES_DYING[this.bossDiesIntervallTimesRun]);
+            this.y += 35;
+            this.bossDiesIntervallTimesRun++;
+            if(this.bossDiesIntervallTimesRun == this.IMAGES_DYING.length) {
                 clearInterval(id);
-            }, 200 / 2 * this.IMAGES_DYING.length);
+            }
         }, 200);
     }
 }
