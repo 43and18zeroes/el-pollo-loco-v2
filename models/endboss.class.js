@@ -1,103 +1,106 @@
 class Endboss extends MovableObject {
+  endBossIntervals = [];
 
-    endBossIntervals = [];
-    
-    width = 343;
-    height = 400;
-    y = 50;
+  width = 343;
+  height = 400;
+  y = 50;
 
-    endBossHealth = 3;
-    endBossDead = false;
-    bossDiesIntervallTimesRun = 0;
+  endBossHealth = 3;
+  endBossDead = false;
+  bossDiesIntervallTimesRun = 0;
 
-    offset = {
-        top: 100,
-        bottom: 100,
-        left: 70,
-        right: 50
-    }
+  offset = {
+    top: 100,
+    bottom: 100,
+    left: 70,
+    right: 50,
+  };
 
-    IMAGES_WALKING = [
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G5.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G6.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G7.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G8.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G9.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G10.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G11.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G12.png'
-    ];
+  IMAGES_WALKING = [
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G5.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G6.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G7.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G8.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G9.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G10.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G11.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G12.png",
+  ];
 
-    IMAGES_DYING =  [
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G24.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G25.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G26.png'
-    ];
+  IMAGES_DYING = [
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G24.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G25.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G26.png",
+  ];
 
-    IMAGES_ENRAGED =  [
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G21.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G22.png',
-        'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G23.png'
-    ];
+  IMAGES_ENRAGED = [
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G21.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G22.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G23.png",
+  ];
 
-    bossDefeatedMP3 = new Audio("audio/boss-defeated.mp3");
-    endScreenMP3 = new Audio("audio/endscreen.mp3");
+  bossDefeatedMP3 = new Audio("audio/boss-defeated.mp3");
+  endScreenMP3 = new Audio("audio/endscreen.mp3");
 
-    constructor() {
-        // if even the loadImages should load the images with a problem
-        // the loadImage loads the first img just in case
-        super().loadImage(this.IMAGES_WALKING[0]);
-        this.loadImages(this.IMAGES_WALKING);
-        this.loadImages(this.IMAGES_DYING);
-        this.loadImages(this.IMAGES_ENRAGED);
-        this.x = 2470;
-        this.animate();
-    }
+  constructor() {
+    // if even the loadImages should load the images with a problem
+    // the loadImage loads the first img just in case
+    super().loadImage(this.IMAGES_WALKING[0]);
+    this.loadImages(this.IMAGES_WALKING);
+    this.loadImages(this.IMAGES_DYING);
+    this.loadImages(this.IMAGES_ENRAGED);
+    this.x = 2470;
+    this.animate();
+  }
 
-    animate() {
-        let id = setInterval(() => {
-            this.playAnimation(this.IMAGES_WALKING);
-        }, 200);
-        this.endBossIntervals.push(id);
-    }
+  animate() {
+    let id = setInterval(() => {
+      this.playAnimation(this.IMAGES_WALKING);
+    }, 200);
+    this.endBossIntervals.push(id);
+  }
 
-    bossDies() {
-        this.endBossDead = true;
-        this.endBossIntervals.forEach(clearInterval);
-        this.bossDiesAnimation();
-        this.bossDefeatedMP3.play();
-    }
+  bossDies() {
+    this.endBossDead = true;
+    this.endBossIntervals.forEach(clearInterval);
+    this.bossDiesAnimation();
+    this.bossDefeatedMP3.play();
+  }
 
-    bossDiesAnimation() {
-        let id = setInterval(() => {
-            this.loadImage(this.IMAGES_DYING[this.bossDiesIntervallTimesRun]);
-            this.y += 35;
-            this.bossDiesIntervallTimesRun++;
-            if(this.bossDiesIntervallTimesRun == this.IMAGES_DYING.length) {
-                clearInterval(id);
-            }
-        }, 200);
-        this.showGameOverScreen();
-    }
+  bossDiesAnimation() {
+    let id = setInterval(() => {
+      this.loadImage(this.IMAGES_DYING[this.bossDiesIntervallTimesRun]);
+      this.y += 35;
+      this.bossDiesIntervallTimesRun++;
+      if (this.bossDiesIntervallTimesRun == this.IMAGES_DYING.length) {
+        clearInterval(id);
+      }
+    }, 200);
+    this.showGameOverScreen();
+  }
 
-    showGameOverScreen() {
-        setTimeout(() => {
-            document.getElementById("youwon").style.display = "inline";
-            this.endScreenMP3.play();
-        }, 3500);
-    };
+  showGameOverScreen() {
+    setTimeout(() => {
+      this.disableKeys();
+      document.getElementById("youwon").style.display = "inline";
+      this.endScreenMP3.play();
+    }, 3500);
+  }
 
-    // bossEnraged() {
-    //     this.endBossIntervals.forEach(clearInterval);
-    //     setInterval(() => {
-    //         this.playAnimation(this.IMAGES_ENRAGED);
-    //     }, 200);
-    // }
+  disableKeys() {
+    window.addEventListener(
+      "keydown",
+      (e) => {
+        e.stopImmediatePropagation();
+      },
+      true
+    );
+  }
 
-    bossEnraged() {
-        let id = setInterval(() => {
-            this.playAnimation(this.IMAGES_ENRAGED);
-        }, 150);
-        this.endBossIntervals.push(id);
-    }
+  bossEnraged() {
+    let id = setInterval(() => {
+      this.playAnimation(this.IMAGES_ENRAGED);
+    }, 150);
+    this.endBossIntervals.push(id);
+  }
 }
