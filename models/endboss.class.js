@@ -6,7 +6,7 @@ class Endboss extends MovableObject {
     height = 400;
     y = 50;
 
-    endBossHealth = 2;
+    endBossHealth = 3;
     endBossDead = false;
     bossDiesIntervallTimesRun = 0;
 
@@ -41,6 +41,7 @@ class Endboss extends MovableObject {
     ];
 
     bossDefeatedMP3 = new Audio("audio/boss-defeated.mp3");
+    endScreenMP3 = new Audio("audio/endscreen.mp3");
 
     constructor() {
         // if even the loadImages should load the images with a problem
@@ -63,6 +64,11 @@ class Endboss extends MovableObject {
     bossDies() {
         this.endBossDead = true;
         this.endBossIntervals.forEach(clearInterval);
+        this.bossDiesAnimation();
+        this.bossDefeatedMP3.play();
+    }
+
+    bossDiesAnimation() {
         let id = setInterval(() => {
             this.loadImage(this.IMAGES_DYING[this.bossDiesIntervallTimesRun]);
             this.y += 35;
@@ -71,8 +77,15 @@ class Endboss extends MovableObject {
                 clearInterval(id);
             }
         }, 200);
-        this.bossDefeatedMP3.play();
+        this.showGameOverScreen();
     }
+
+    showGameOverScreen() {
+        setTimeout(() => {
+            document.getElementById("youwon").style.display = "inline";
+            this.endScreenMP3.play();
+        }, 3500);
+    };
 
     // bossEnraged() {
     //     this.endBossIntervals.forEach(clearInterval);
