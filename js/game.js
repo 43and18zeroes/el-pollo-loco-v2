@@ -2,6 +2,8 @@ let canvas;
 let world;
 let keyboard = new Keyboard(); // Instances keyboard object
 
+pepeStartMP3 = new Audio("audio/pepe-start.mp3");
+collectBottlesMP3 = new Audio("audio/collect-bottles.mp3");
 
 function init() {
     canvas = document.getElementById('canvas');
@@ -14,6 +16,7 @@ function init() {
 
 
 function startGame() {
+    pepeStartMP3.play();
     hideFullscreenIconOnMobile();
     initLevel();
     world = new World(canvas, keyboard);
@@ -23,6 +26,7 @@ function startGame() {
     /* wait to avoid black screen caused by loading */
     setTimeout(() => {
         document.getElementById("pepestart").style.display = "none";
+        collectBottlesMP3.play();
     }, 1500);
 }
 

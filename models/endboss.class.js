@@ -40,6 +40,8 @@ class Endboss extends MovableObject {
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G23.png'
     ];
 
+    bossDefeatedMP3 = new Audio("audio/boss-defeated.mp3");
+
     constructor() {
         // if even the loadImages should load the images with a problem
         // the loadImage loads the first img just in case
@@ -69,6 +71,7 @@ class Endboss extends MovableObject {
                 clearInterval(id);
             }
         }, 200);
+        this.bossDefeatedMP3.play();
     }
 
     // bossEnraged() {
