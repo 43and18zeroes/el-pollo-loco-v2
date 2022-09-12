@@ -108,3 +108,19 @@ canvas {
     height: 100%;
     display: none;
 }
+
+#youlost {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: none;
+}
+
+#youwon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: none;
+}

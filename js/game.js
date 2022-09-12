@@ -14,7 +14,6 @@ function init() {
     initTouchButtons();
 }
 
-
 function startGame() {
     pepeStartMP3.play();
     hideFullscreenIconOnMobile();
@@ -26,15 +25,16 @@ function startGame() {
     /* wait to avoid black screen caused by loading */
     setTimeout(() => {
         document.getElementById("pepestart").style.display = "none";
-        collectBottlesMP3.play();
     }, 1500);
+    setTimeout(() => {
+        collectBottlesMP3.play();
+    }, 2000);
 }
 
 function hideFullscreenIconOnMobile() {
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         document.getElementById('enterfullscreen').style.display = 'none';
-    }
-    
+    } 
 }
 
 // Basic eventlistener that displays pressed keys in the console
@@ -63,7 +63,6 @@ window.addEventListener("keydown", (e) => {
         keyboard.D = true;
     }
 });
-
 
 window.addEventListener("keyup", (e) => {
     if (e.keyCode == 39) {
@@ -128,7 +127,6 @@ function initTouchButtons() {
         keyboard.D = false;
     });
 }
-
 
 function activateFullscreen() {
     let canvas = document.getElementById('canvas');
