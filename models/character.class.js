@@ -1,165 +1,151 @@
 class Character extends MovableObject {
+  // y = 180;
+  y = 180;
+  width = 120;
+  height = 250;
+  speed = 10;
+  coinsAmount = 0;
+  bottleAmount = 0;
 
-    // y = 180;
-    y = 180;
-    width = 120;
-    height = 250;
-    speed = 10;
-    coinsAmount = 0;
-    bottleAmount = 0;
+  offset = {
+    top: 120,
+    bottom: 14,
+    left: 40,
+    right: 40,
+  };
 
-    offset = {
-        top: 120,
-        bottom: 14,
-        left: 40,
-        right: 40
-    }
-    
-    IMAGES_WALKING = [
-        'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-22.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-23.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-24.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-25.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-26.png'
-    ];
-    
-    IMAGES_JUMPING = [
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-31.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-32.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-33.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-34.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-35.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-36.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-37.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-38.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-39.png'
-    ];
-  
-    IMAGES_DEAD = [
-        'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-51.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-52.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-53.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-54.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-55.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-56.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-57.png'
-    ];
+  IMAGES_WALKING = [
+    "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-22.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-23.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-24.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-25.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-26.png",
+  ];
 
-    IMAGES_HURT = [
-        'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-41.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-42.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png'
-    ];
-   
-    world;
-    walking_sound = new Audio('audio/walking.mp3');
+  IMAGES_JUMPING = [
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-31.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-32.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-33.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-34.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-35.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-36.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-37.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-38.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-39.png",
+  ];
 
+  IMAGES_DEAD = [
+    "img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-51.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-52.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-53.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-54.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-55.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-56.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/5.Muerte/D-57.png",
+  ];
 
-    constructor() {
-        super().loadImage('img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png');
-        this.loadImages(this.IMAGES_WALKING);
-        this.loadImages(this.IMAGES_JUMPING);
-        this.loadImages(this.IMAGES_DEAD);
-        this.loadImages(this.IMAGES_HURT);
-        this.applyGravity();
-        this.animate();
-    }
+  IMAGES_HURT = [
+    "img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-41.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-42.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png",
+  ];
 
+  world;
+  characterDiesIntervallTimesRun = 0;
+  walking_sound = new Audio("audio/walking.mp3");
 
-    moveRight() {
-        this.x += this.speed;
-        // character move right -> sound plays
-        this.otherDirection = false;
-        this.walking_sound.play();
-    }
+  constructor() {
+    super().loadImage(
+      "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png"
+    );
+    this.loadImages(this.IMAGES_WALKING);
+    this.loadImages(this.IMAGES_JUMPING);
+    this.loadImages(this.IMAGES_DEAD);
+    this.loadImages(this.IMAGES_HURT);
+    this.applyGravity();
+    this.animate();
+  }
 
+  moveRight() {
+    this.x += this.speed;
+    // character move right -> sound plays
+    this.otherDirection = false;
+    this.walking_sound.play();
+  }
 
-    moveLeft() {
-        this.x -= this.speed;
-        this.otherDirection = true;
-        this.walking_sound.play();
-    }
+  moveLeft() {
+    this.x -= this.speed;
+    this.otherDirection = true;
+    this.walking_sound.play();
+  }
 
+  beginningOfLevelReached() {
+    return !(this.x > 0);
+  }
 
-    beginningOfLevelReached() {
-        return !(this.x > 0);
-    }
+  endOfLevelIsReached() {
+    return !(this.x < this.world.level.level_end_x);
+  }
 
+  canMoveRight() {
+    return this.world.keyboard.RIGHT && !this.endOfLevelIsReached();
+  }
 
-    endOfLevelIsReached() {
-        return !(this.x < this.world.level.level_end_x);
-    }
-    
+  canMoveLeft() {
+    return this.world.keyboard.LEFT && !this.beginningOfLevelReached();
+  }
 
-    canMoveRight() {
-        return this.world.keyboard.RIGHT &&
-        !this.endOfLevelIsReached();
-    }
+  canJump() {
+    return this.world.keyboard.SPACE && !this.isAboveGround();
+  }
 
+  move() {
+    // sound pauses during a draw() cycle in order to stop playing when character isn't walking
+    this.walking_sound.pause();
+    if (this.canMoveRight()) this.moveRight();
 
-    canMoveLeft() {
-        return this.world.keyboard.LEFT &&
-        !this.beginningOfLevelReached();
-    }
+    if (this.canMoveLeft()) this.moveLeft();
 
+    if (this.canJump()) this.jump();
 
-    canJump() {
-        return this.world.keyboard.SPACE &&
-        !this.isAboveGround();
-    }
+    // changes cam position inverted to the x of character
+    // + 100 so character is away from the canvas border
+    this.world.camera_x = -this.x + 100;
+  }
 
+  isMoving() {
+    return this.world.keyboard.RIGHT == true || this.world.keyboard.LEFT;
+  }
 
-    move() {
-        // sound pauses during a draw() cycle in order to stop playing when character isn't walking
-        this.walking_sound.pause();
-        if (this.canMoveRight())
-            this.moveRight();
+  play() {
+    if (this.isDead()) this.characterDyingAnimation();
+    else if (this.isHurt()) this.playAnimation(this.IMAGES_HURT);
+    else if (this.isAboveGround()) this.playAnimation(this.IMAGES_JUMPING);
+    else if (this.isMoving()) this.playAnimation(this.IMAGES_WALKING);
+  }
 
-        if (this.canMoveLeft())
-            this.moveLeft();
+  characterDyingAnimation() {
+    let id = setInterval(() => {
+      this.loadImage(this.IMAGES_DEAD[this.characterDiesIntervallTimesRun]);
+      this.y += 1;
+      this.characterDiesIntervallTimesRun++;
+      if (this.characterDiesIntervallTimesRun == this.IMAGES_DEAD.length) {
+        clearInterval(id);
+      }
+    }, 200);
+  }
 
-        if (this.canJump())
-            this.jump();
+  animate() {
+    setInterval(() => {
+      this.move();
+    }, 1000 / 60);
 
-        // changes cam position inverted to the x of character
-        // + 100 so character is away from the canvas border
-        this.world.camera_x = -this.x + 100;
-    }
+    setInterval(() => {
+      this.play();
+    }, 50);
+  }
 
-
-    isMoving() {
-        return this.world.keyboard.RIGHT == true || this.world.keyboard.LEFT;
-    }
-
-
-    play() {
-        if (this.isDead())
-            this.playAnimation(this.IMAGES_DEAD);
-        
-        else if (this.isHurt())
-            this.playAnimation(this.IMAGES_HURT);
-        
-        else if (this.isAboveGround())
-            this.playAnimation(this.IMAGES_JUMPING);
-        
-        else if (this.isMoving())
-                this.playAnimation(this.IMAGES_WALKING);
-    }
-
-
-    animate() {
-        setInterval(() => {
-            this.move();
-        }, 1000 / 60);
-
-        setInterval(() => {
-            this.play();
-        }, 50);
-    }
-
-
-    jump() {
-        this.speedY = 13;
-    }
-
+  jump() {
+    this.speedY = 13;
+  }
 }
