@@ -14,6 +14,7 @@ function init() {
 
 
 function startGame() {
+    hideFullscreenIconOnMobile();
     initLevel();
     world = new World(canvas, keyboard);
     document.getElementById("pepestart").style.display = "inline";
@@ -25,6 +26,12 @@ function startGame() {
     }, 1500);
 }
 
+function hideFullscreenIconOnMobile() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        document.getElementById('enterfullscreen').style.display = 'none';
+    }
+    
+}
 
 // Basic eventlistener that displays pressed keys in the console
 window.addEventListener("keydown", (e) => {
