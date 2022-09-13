@@ -6,6 +6,7 @@ class Character extends MovableObject {
   speed = 10;
   coinsAmount = 0;
   bottleAmount = 0;
+  characterDiesIntervallTimesRun = 0;
 
   offset = {
     top: 120,
@@ -125,14 +126,9 @@ class Character extends MovableObject {
   }
 
   characterDyingAnimation() {
-    let id = setInterval(() => {
       this.loadImage(this.IMAGES_DEAD[this.characterDiesIntervallTimesRun]);
-      this.y += 1;
+      this.y += 15;
       this.characterDiesIntervallTimesRun++;
-      if (this.characterDiesIntervallTimesRun == this.IMAGES_DEAD.length) {
-        clearInterval(id);
-      }
-    }, 200);
   }
 
   animate() {
