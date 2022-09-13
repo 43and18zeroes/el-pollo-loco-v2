@@ -1,5 +1,5 @@
 class Character extends MovableObject {
-  // y = 180;
+
   y = 180;
   width = 120;
   height = 250;
@@ -51,6 +51,19 @@ class Character extends MovableObject {
     "img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png",
   ];
 
+  IMAGES_IDLING = [
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-1.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-2.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-3.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-4.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-5.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-6.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-7.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-8.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-9.png",
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-10.png"
+  ];
+
   intervalIds = [];
   world;
   characterDiesAuxVar = 0;
@@ -66,6 +79,7 @@ class Character extends MovableObject {
     this.loadImages(this.IMAGES_JUMPING);
     this.loadImages(this.IMAGES_DEAD);
     this.loadImages(this.IMAGES_HURT);
+    this.loadImages(this.IMAGES_IDLING);
     this.applyGravity();
     this.animate();
   }
@@ -160,8 +174,6 @@ class Character extends MovableObject {
 
     this.intervalIds.push(idMove, idPlay);
   }
-
-
 
   jump() {
     this.speedY = 13;
