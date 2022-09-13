@@ -6,7 +6,7 @@ class Character extends MovableObject {
   speed = 10;
   coinsAmount = 0;
   bottleAmount = 0;
-  characterDiesIntervallTimesRun = 0;
+  characterDiesAuxVar = 0;
 
   offset = {
     top: 120,
@@ -51,9 +51,12 @@ class Character extends MovableObject {
     "img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png",
   ];
 
+  intervalIds = [];
   world;
-  characterDiesIntervallTimesRun = 0;
+  characterDiesAuxVar = 0;
   walking_sound = new Audio("audio/walking.mp3");
+  pepeDyingScreamMP3 = new Audio("audio/pepescream.mp3");
+  youLostScreenMP3 = new Audio("audio/gameover.mp3");
 
   constructor() {
     super().loadImage(
@@ -119,27 +122,46 @@ class Character extends MovableObject {
   }
 
   play() {
-    if (this.isDead()) this.characterDyingAnimation();
+    if (this.isDead()) {
+      this.disableKeys();
+      this.characterDyingAnimation();
+    }
     else if (this.isHurt()) this.playAnimation(this.IMAGES_HURT);
     else if (this.isAboveGround()) this.playAnimation(this.IMAGES_JUMPING);
     else if (this.isMoving()) this.playAnimation(this.IMAGES_WALKING);
   }
 
   characterDyingAnimation() {
-      this.loadImage(this.IMAGES_DEAD[this.characterDiesIntervallTimesRun]);
+      this.loadImage(this.IMAGES_DEAD[this.characterDiesAuxVar]);
       this.y += 15;
-      this.characterDiesIntervallTimesRun++;
+      this.characterDiesAuxVar++;
+      this.pepeDyingScreamMP3.play();
+      if (this.characterDiesAuxVar == this.IMAGES_DEAD.length) {
+        this.intervalIds.forEach(clearInterval);
+        this.showYouLostScreen();
+      }
+  }
+
+  showYouLostScreen() {
+    setTimeout(() => {
+      document.getElementById("youlost").style.display = "inline";
+      this.youLostScreenMP3.play();
+    }, 3500);
   }
 
   animate() {
-    setInterval(() => {
+    let idMove = setInterval(() => {
       this.move();
     }, 1000 / 60);
 
-    setInterval(() => {
+    let idPlay = setInterval(() => {
       this.play();
     }, 50);
+
+    this.intervalIds.push(idMove, idPlay);
   }
+
+
 
   jump() {
     this.speedY = 13;

@@ -78,4 +78,14 @@ class MovableObject extends DrawableObject {
         return this.energy == 0;
     }
 
+    disableKeys() {
+        window.addEventListener(
+          "keydown",
+          (e) => {
+            e.stopImmediatePropagation();
+          },
+          true
+        );
+      }
+
 }
