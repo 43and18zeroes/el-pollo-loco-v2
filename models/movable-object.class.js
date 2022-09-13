@@ -6,6 +6,7 @@ class MovableObject extends DrawableObject {
     acceleration = 0.5;
     energy = 100;
     lastHit = 0;
+    lastKeyboardUsage = 0;
 
 
     applyGravity() {
@@ -55,8 +56,8 @@ class MovableObject extends DrawableObject {
     isColliding(mo) {
         return this.x + this.width - this.offset.right > mo.x + mo.offset.left &&
             this.y + this.height - this.offset.bottom > mo.y + mo.offset.top &&
-            this.x  + this.offset.left < mo.x + mo.width - mo.offset.right &&
-            this.y + this.offset.top < mo.y + mo.height  - mo.offset.bottom;
+            this.x + this.offset.left < mo.x + mo.width - mo.offset.right &&
+            this.y + this.offset.top < mo.y + mo.height - mo.offset.bottom;
     }
 
     hit() {
@@ -74,18 +75,24 @@ class MovableObject extends DrawableObject {
         return timepassed < 1; // return true if hit durring last 5 s
     }
 
+    isIdling() {
+        let timepassed = new Date().getTime() - this.keyboardUsage; // Difference in ms
+        timepassed = timepassed / 1000; //Difference in s
+        return timepassed < 1; // return true if hit durring last 5 s
+    }
+
     isDead() {
         return this.energy == 0;
     }
 
     disableKeys() {
         window.addEventListener(
-          "keydown",
-          (e) => {
-            e.stopImmediatePropagation();
-          },
-          true
+            "keydown",
+            (e) => {
+                e.stopImmediatePropagation();
+            },
+            true
         );
-      }
+    }
 
 }
