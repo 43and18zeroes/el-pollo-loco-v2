@@ -87,6 +87,15 @@
     cursor: pointer;
 }
 
+#startbutton button:hover {
+    -webkit-filter: brightness(90%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all .1s ease;
+}
+
 #startbutton button span {
     font-size: 50px;
     font-weight: 800;
