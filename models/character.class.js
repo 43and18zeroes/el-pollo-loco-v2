@@ -82,6 +82,7 @@ class Character extends MovableObject {
     this.loadImages(this.IMAGES_IDLING);
     this.applyGravity();
     this.animate();
+    this.pepeDyingScreamMP3.volume = 0.1;
   }
 
   moveRight() {
@@ -136,28 +137,30 @@ class Character extends MovableObject {
   }
 
   play() {
-    if (this.isDead()) {
-      this.disableKeys();
-      if (!this.walking_sound.paused) {
-        this.walking_sound.pause();
-      }
-      this.characterDyingAnimation();
-    }
+    if (this.isDead()) this.initiateDead();
     else if (this.isHurt()) this.playAnimation(this.IMAGES_HURT);
     else if (this.isAboveGround()) this.playAnimation(this.IMAGES_JUMPING);
     else if (this.isMoving()) this.playAnimation(this.IMAGES_WALKING);
     else if (this.isIdling()) this.playAnimation(this.IMAGES_IDLING);
   }
 
+  initiateDead() {
+    this.disableKeys();
+    if (!this.walking_sound.paused) {
+      this.walking_sound.pause();
+    }
+    this.characterDyingAnimation();
+  }
+
   characterDyingAnimation() {
-      this.loadImage(this.IMAGES_DEAD[this.characterDiesAuxVar]);
-      this.y += 15;
-      this.characterDiesAuxVar++;
-      this.pepeDyingScreamMP3.play();
-      if (this.characterDiesAuxVar == this.IMAGES_DEAD.length) {
-        this.intervalIds.forEach(clearInterval);
-        this.showYouLostScreen();
-      }
+    this.loadImage(this.IMAGES_DEAD[this.characterDiesAuxVar]);
+    this.y += 15;
+    this.characterDiesAuxVar++;
+    this.pepeDyingScreamMP3.play();
+    if (this.characterDiesAuxVar == this.IMAGES_DEAD.length) {
+      this.intervalIds.forEach(clearInterval);
+      this.showYouLostScreen();
+    }
   }
 
   showYouLostScreen() {
