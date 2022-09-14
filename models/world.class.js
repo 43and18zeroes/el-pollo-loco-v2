@@ -160,12 +160,25 @@ class World {
 
   checkCollisionsChicken() {
     this.level.enemies.forEach((enemy) => {
+      if (this.character.isColliding(enemy) && this.isLandingOnTop()) {
+        console.log("head");
+        this.level.enemies.forEach((enemy) => {
+          const enemyToRemove = this.enemies.indexOf(enemy);
+          this.enemies.splice(enemyToRemove, 1);
+        });
+      }
       if (this.character.isColliding(enemy)) {
         this.character.hit();
         // Manipulate healthbar display
         this.healthBar.setPercentageHealthBar(this.character.energy);
       }
     });
+  }
+
+  isLandingOnTop() {
+    const characterFeet = this.character.y + this.character.height - this.character.offset['top'] - this.character.offset['bottom'];
+    const chickenHead = this.enemies[0].y + this.enemies[0].offset['top'];
+    return characterFeet == chickenHead;
   }
 
   checkCollisionsCoins() {
