@@ -10,6 +10,8 @@ class Coin extends CollectableObject {
     width = 60;
     height = 60;
 
+    coinCollectedMP3 = new Audio("audio/coin-collected.mp3");
+
     constructor() {
         super().loadImage('img/8.Coin/Moneda1.png');
         this.x = 400 + Math.floor(Math.random() * 10 * 180);

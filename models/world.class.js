@@ -184,6 +184,7 @@ class World {
   checkCollisionsCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
+        this.coins[0].coinCollectedMP3.play();
         const coinToRemove = this.coins.indexOf(coin);
         this.coins.splice(coinToRemove, 1);
         this.character.coinsAmount++;
