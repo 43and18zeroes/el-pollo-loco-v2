@@ -138,6 +138,9 @@ class Character extends MovableObject {
   play() {
     if (this.isDead()) {
       this.disableKeys();
+      if (!this.walking_sound.paused) {
+        this.walking_sound.pause();
+      }
       this.characterDyingAnimation();
     }
     else if (this.isHurt()) this.playAnimation(this.IMAGES_HURT);
