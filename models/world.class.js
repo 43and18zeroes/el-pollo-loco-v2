@@ -184,7 +184,7 @@ class World {
   checkCollisionsCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
-        this.coins[0].coinCollectedMP3.play();
+        this.playCoinCollectedMP3();
         const coinToRemove = this.coins.indexOf(coin);
         this.coins.splice(coinToRemove, 1);
         this.character.coinsAmount++;
@@ -193,6 +193,14 @@ class World {
         );
       }
     });
+  }
+
+  playCoinCollectedMP3() {
+    if (!this.coins[0].coinCollectedMP3.paused) {
+      this.coins[0].coinCollectedMP3.pause();
+      this.coins[0].coinCollectedMP3.currentTime = 0;
+    }
+    this.coins[0].coinCollectedMP3.play();
   }
 
   checkCollisionsBottles() {
