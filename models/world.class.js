@@ -14,6 +14,7 @@ class World {
   bottles = level1.bottles;
   backgroundObjects = level1.backgroundObjects;
   game_music = new Audio("audio/mexican-huapango-banda-2715.mp3");
+  bottleCollectedMP3 = new Audio("audio/collect-bottle.mp3");
 
   canvas;
   ctx;
@@ -210,6 +211,11 @@ class World {
   checkCollisionsBottles() {
     this.level.bottles.forEach((bottle) => {
       if (this.character.isColliding(bottle)) {
+        if (!this.bottleCollectedMP3.paused) {
+          this.bottleCollectedMP3.pause();
+          this.bottleCollectedMP3.currentTime = 0;
+        }
+        this.bottleCollectedMP3.play();
         const bottleToRemove = this.bottles.indexOf(bottle);
         this.bottles.splice(bottleToRemove, 1);
         this.character.bottleAmount++;
