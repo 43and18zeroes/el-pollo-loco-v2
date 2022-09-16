@@ -34,7 +34,11 @@
     }
 
     #prestart,
-    #prestart img {
+    #prestart img,
+    #youlost,
+    #youlost img,
+    #youwon,
+    #youwon img {
         height: 100vh;
         max-width: 100%;
     }

@@ -65,7 +65,8 @@
 
 #startbutton {
     position: absolute;
-    bottom: 80%;
+    /* bottom: 80%; */
+    top: 35px;
     left: 0;
     right: 0;
     display: flex;
