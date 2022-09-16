@@ -161,17 +161,20 @@ class World {
   checkCollisionsChicken() {
     this.level.enemies.forEach((enemy) => {
       if (this.character.isLandingOnTop(enemy)) {
-        this.playboingOnChickenHeadMP3();
-        this.character.speedY = 6.5;
-        const enemyToRemove = this.enemies.indexOf(enemy);
-        this.enemies.splice(enemyToRemove, 1);
+        this.chickenDies(enemy);
       }
       else if (this.character.isColliding(enemy)) {
         this.character.hit();
-        // Manipulate healthbar display
         this.healthBar.setPercentageHealthBar(this.character.energy);
       }
     });
+  }
+
+  chickenDies(enemy) {
+    this.playboingOnChickenHeadMP3();
+    this.character.speedY = 6.5;
+    const enemyToRemove = this.enemies.indexOf(enemy);
+    this.enemies.splice(enemyToRemove, 1);
   }
 
   playboingOnChickenHeadMP3() {
