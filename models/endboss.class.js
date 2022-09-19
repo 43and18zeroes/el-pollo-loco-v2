@@ -68,6 +68,7 @@ class Endboss extends MovableObject {
   }
 
   bossDies() {
+    this.disableKeys();
     this.endBossDead = true;
     this.endBossIntervals.forEach(clearInterval);
     this.bossDiesAnimation();

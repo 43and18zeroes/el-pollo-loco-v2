@@ -59,6 +59,8 @@ class ThrowableObject extends MovableObject {
         this.bottle_breaking_sound.volume = 0.01;
         this.bottle_breaking_sound.play();
         this.playAnimation(this.IMAGES_BREAKING);
-
+        setTimeout(() => {
+            this.x = 0;
+        }, 100);
     }
 }

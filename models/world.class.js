@@ -225,15 +225,19 @@ class World {
           this.bottleCollectedMP3.pause();
           this.bottleCollectedMP3.currentTime = 0;
         }
-        this.bottleCollectedMP3.play();
-        const bottleToRemove = this.bottles.indexOf(bottle);
-        this.bottles.splice(bottleToRemove, 1);
-        this.character.bottleAmount++;
-        this.bottleAmountBar.setPercentageBottleBarAmount(
-          this.character.bottleAmount
-        );
+        this.collectBottle(bottle);
       }
     });
+  }
+
+  collectBottle(bottle) {
+    this.bottleCollectedMP3.play();
+    const bottleToRemove = this.bottles.indexOf(bottle);
+    this.bottles.splice(bottleToRemove, 1);
+    this.character.bottleAmount++;
+    this.bottleAmountBar.setPercentageBottleBarAmount(
+      this.character.bottleAmount
+    );
   }
 
   checkCollisionsBottlesToBoss() {
