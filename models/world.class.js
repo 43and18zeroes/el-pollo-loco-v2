@@ -130,6 +130,7 @@ class World {
       this.checkCollisionsBottlesToBoss();
       this.checkThrowObjects();
       this.checkIfBossIsDead();
+      this.checkCollisionsBoss();
     }, 50);
   }
 
@@ -166,6 +167,15 @@ class World {
       }
       else if (this.character.isColliding(enemy)) {
         this.character.hit();
+        this.healthBar.setPercentageHealthBar(this.character.energy);
+      }
+    });
+  }
+
+  checkCollisionsBoss() {
+    this.level.endBoss.forEach((boss) => {
+      if (this.character.isColliding(boss)) {
+        this.character.oneShot();
         this.healthBar.setPercentageHealthBar(this.character.energy);
       }
     });
