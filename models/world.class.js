@@ -241,6 +241,9 @@ class World {
     this.bossHit = true;
     this.endBoss[0].endBossHealth--;
     this.ThrowableObjects[0].bottleBreak();
+    if (this.endBoss[0].x == 2470) {
+      this.endBoss[0].runLeft();
+    }
     setTimeout(() => {
       this.ThrowableObjects.splice(0, 1);
       this.bossHit = false;
@@ -253,8 +256,7 @@ class World {
 
   bottleHitsBoss(ThrowableObject) {
     return (
-      this.endBoss[0].isColliding(ThrowableObject) &&
-      this.ThrowableObjects.length != 0
+      this.endBoss[0].isColliding(ThrowableObject) && this.ThrowableObjects.length != 0
     );
   }
 
@@ -268,6 +270,7 @@ class World {
       this.endBoss[0].endBossDead == false
     ) {
       this.endBoss[0].bossDies();
+      this.endBoss[0].speed = 0;
     }
   }
 }
