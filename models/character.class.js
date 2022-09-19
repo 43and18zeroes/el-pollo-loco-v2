@@ -90,7 +90,9 @@ class Character extends MovableObject {
     this.x += this.speed;
     // character move right -> sound plays
     this.otherDirection = false;
-    this.walking_sound.play();
+    if (audioOn == true) {
+      walking_sound.play();
+    }
   }
 
   moveLeft() {

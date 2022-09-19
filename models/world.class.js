@@ -16,6 +16,8 @@ class World {
   game_music = new Audio("audio/mexican-huapango-banda-2715.mp3");
   bottleCollectedMP3 = new Audio("audio/collect-bottle.mp3");
 
+  audioOn = true;
+
   canvas;
   ctx;
   keyboard;
@@ -285,6 +287,14 @@ class World {
     ) {
       this.endBoss[0].bossDies();
       this.endBoss[0].speed = 0;
+    }
+  }
+
+  soundOnOff() {
+    if (audioOn == true) {
+      this.audioOn = false;
+    } else {
+      this.audioOn = true;
     }
   }
 }
