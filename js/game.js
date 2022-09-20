@@ -135,9 +135,12 @@ function activateFullscreen() {
 }
 
 function soundOnOff() {
+    const soundOnOffIcon = document.getElementById('soundonofficon');
     if (world.soundOn == true) {
       world.soundOn = false;
+      soundOnOffIcon.innerText = 'volume_off';
     } else {
       world.soundOn = true;
+      soundOnOffIcon.innerText = 'volume_up';
     }
   }
