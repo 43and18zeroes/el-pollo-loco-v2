@@ -33,12 +33,13 @@ function initLevelMedia() {
     setTimeout(() => {
         collectBottlesMP3.play();
     }, 2000);
+
 }
 
 function hideFullscreenIconOnMobile() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         document.getElementById('enterfullscreen').style.display = 'none';
-    } 
+    }
 }
 
 window.addEventListener("keydown", (e) => {
@@ -141,10 +142,12 @@ function activateFullscreen() {
 function soundOnOff() {
     const soundOnOffIcon = document.getElementById('soundonofficon');
     if (world.soundOn == true) {
-      world.soundOn = false;
-      soundOnOffIcon.innerText = 'volume_off';
+        world.soundOn = false;
+        soundOnOffIcon.innerText = 'volume_off';
+        world.game_music.pause();
     } else {
-      world.soundOn = true;
-      soundOnOffIcon.innerText = 'volume_up';
+        world.soundOn = true;
+        soundOnOffIcon.innerText = 'volume_up';
+        world.game_music.play();
     }
-  }
+}

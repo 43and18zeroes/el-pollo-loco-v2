@@ -161,7 +161,9 @@ class Character extends MovableObject {
     this.loadImage(this.IMAGES_DEAD[this.characterDiesAuxVar]);
     this.y += 15;
     this.characterDiesAuxVar++;
-    this.pepeDyingScreamMP3.play();
+    if (this.world.soundOn == true) {
+      this.pepeDyingScreamMP3.play();
+    }
     if (this.characterDiesAuxVar == this.IMAGES_DEAD.length) {
       this.intervalIds.forEach(clearInterval);
       this.showYouLostScreen();
@@ -171,7 +173,9 @@ class Character extends MovableObject {
   showYouLostScreen() {
     setTimeout(() => {
       document.getElementById("youlost").style.display = "inline";
-      this.youLostScreenMP3.play();
+      if (this.world.soundOn == true) {
+        this.youLostScreenMP3.play();
+      }
     }, 3500);
   }
 

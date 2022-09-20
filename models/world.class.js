@@ -205,7 +205,9 @@ class World {
   checkCollisionsCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
-        this.playCoinCollectedMP3();
+        if (this.soundOn == true) {
+          this.playCoinCollectedMP3();
+        }
         const coinToRemove = this.coins.indexOf(coin);
         this.coins.splice(coinToRemove, 1);
         this.character.coinsAmount++;
@@ -237,7 +239,9 @@ class World {
   }
 
   collectBottle(bottle) {
-    this.bottleCollectedMP3.play();
+    if (this.soundOn == true) {
+      this.bottleCollectedMP3.play();
+    }
     const bottleToRemove = this.bottles.indexOf(bottle);
     this.bottles.splice(bottleToRemove, 1);
     this.character.bottleAmount++;
