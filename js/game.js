@@ -145,6 +145,7 @@ function soundOnOff() {
         world.soundOn = false;
         soundOnOffIcon.innerText = 'volume_off';
         world.game_music.pause();
+        collectBottlesMP3.pause();
     } else {
         world.soundOn = true;
         soundOnOffIcon.innerText = 'volume_up';
