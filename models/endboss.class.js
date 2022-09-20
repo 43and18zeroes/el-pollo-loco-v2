@@ -42,6 +42,7 @@ class Endboss extends MovableObject {
 
   bossDefeatedMP3 = new Audio("audio/boss-defeated.mp3");
   endScreenMP3 = new Audio("audio/endscreen.mp3");
+  world;
 
   constructor() {
     // if even the loadImages should load the images with a problem
@@ -72,7 +73,9 @@ class Endboss extends MovableObject {
     this.endBossDead = true;
     this.endBossIntervals.forEach(clearInterval);
     this.bossDiesAnimation();
-    this.bossDefeatedMP3.play();
+    if (this.world.soundOn == true) {
+      this.bossDefeatedMP3.play();
+    }
   }
 
   bossDiesAnimation() {
