@@ -184,7 +184,9 @@ class World {
   }
 
   chickenDies(enemy) {
-    this.playboingOnChickenHeadMP3();
+    if (this.soundOn == true) {
+      this.playboingOnChickenHeadMP3();
+    }
     this.character.speedY = 6.5;
     const enemyToRemove = this.enemies.indexOf(enemy);
     this.enemies.splice(enemyToRemove, 1);

@@ -19,6 +19,10 @@ function startGame() {
     hideFullscreenIconOnMobile();
     initLevel();
     world = new World(canvas, keyboard);
+    initLevelMedia();
+}
+
+function initLevelMedia() {
     document.getElementById("pepestart").style.display = "inline";
     document.getElementById("startbutton").style.display = "none";
     document.getElementById("startscreen").style.display = "none";
