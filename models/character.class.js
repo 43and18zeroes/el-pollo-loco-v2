@@ -90,7 +90,7 @@ class Character extends MovableObject {
     this.x += this.speed;
     // character move right -> sound plays
     this.otherDirection = false;
-    if (this.world.soundOn == true) {
+    if (this.world.soundOn == true && this.y >= 180) {
       this.walking_sound.play();
     }
   }
@@ -98,7 +98,9 @@ class Character extends MovableObject {
   moveLeft() {
     this.x -= this.speed;
     this.otherDirection = true;
-    this.walking_sound.play();
+    if (this.world.soundOn == true && this.y >= 180) {
+      this.walking_sound.play();
+    }
   }
 
   beginningOfLevelReached() {
