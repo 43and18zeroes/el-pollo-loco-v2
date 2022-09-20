@@ -25,6 +25,7 @@ class ThrowableObject extends MovableObject {
         'img/6.botella/Rotación/Splash de salsa/Mesa de trabajo 1 copia 12.png'
     ];
 
+    world;
     bottle_breaking_sound = new Audio('audio/bottle-break.mp3');
 
     constructor(x, y) {
@@ -56,8 +57,10 @@ class ThrowableObject extends MovableObject {
 
     bottleBreak() {
         this.throwableObjectsIntervals.forEach(clearInterval);
-        this.bottle_breaking_sound.volume = 0.01;
-        this.bottle_breaking_sound.play();
+        if (world.soundOn == true) {
+            this.bottle_breaking_sound.volume = 0.01;
+            this.bottle_breaking_sound.play();
+        }
         this.playAnimation(this.IMAGES_BREAKING);
         setTimeout(() => {
             this.x = 0;

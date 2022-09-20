@@ -94,7 +94,9 @@ class Endboss extends MovableObject {
     setTimeout(() => {
       this.disableKeys();
       document.getElementById("youwon").style.display = "inline";
-      this.endScreenMP3.play();
+      if (this.world.soundOn == true) {
+        this.endScreenMP3.play();
+      }
     }, 3500);
   }
 
