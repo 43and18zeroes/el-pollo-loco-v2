@@ -133,3 +133,11 @@ function activateFullscreen() {
     canvas.classList.add('fullscreen-res');
     canvas.style.backgroundImage = 'none';
 }
+
+function soundOnOff() {
+    if (world.soundOn == true) {
+      world.soundOn = false;
+    } else {
+      world.soundOn = true;
+    }
+  }
