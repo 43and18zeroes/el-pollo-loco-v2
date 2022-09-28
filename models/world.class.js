@@ -47,18 +47,11 @@ class World {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.ctx.translate(this.camera_x, 0);
     this.renderObjects();
-
     this.addToMap(this.character);
-
     this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
-
     this.renderFixedObjects();
-
     this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
-
-    // return camera after everything is drawed (otherwise it would translate until infinity)
-    this.ctx.translate(-this.camera_x, 0);
-
+    this.ctx.translate(-this.camera_x, 0); // return camera after everything is drawed (otherwise it would translate until infinity)
     let self = this;
     requestAnimationFrame(function () {
       self.draw();
