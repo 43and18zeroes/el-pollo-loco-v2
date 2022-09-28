@@ -11,10 +11,6 @@
         width: 100%;
     }
 
-    h1 {
-        display: none;
-    }
-
     #enterfullscreen {
         display: none;
     }
@@ -41,10 +37,6 @@
     #youwon img {
         height: 100vh;
         max-width: 100%;
-    }
-
-    h1 {
-        display: none;
     }
 }
 
@@ -89,15 +81,3 @@
         display: none;
     }
 }
-
-/*
-@media only screen and (max-width: 720px) and (orientation: portrait) {
-    body {
-        transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -webkit-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-    }
-}
-*/
