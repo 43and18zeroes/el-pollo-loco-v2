@@ -79,12 +79,6 @@ class MovableObject extends DrawableObject {
         return timepassed < 1; // return true if hit durring last 5 s
     }
 
-    isIdling() {
-        let timepassed = new Date().getTime() - this.keyboardUsage; // Difference in ms
-        timepassed = timepassed / 1000; //Difference in s
-        return timepassed < 1; // return true if hit durring last 5 s
-    }
-
     isDead() {
         return this.energy == 0;
     }

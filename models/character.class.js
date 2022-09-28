@@ -51,6 +51,10 @@ class Character extends MovableObject {
     "img/2.Secuencias_Personaje-Pepe-corrección/4.Herido/H-43.png",
   ];
 
+  IMAGES_STANDING = [
+    "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-1.png"
+  ];
+
   IMAGES_IDLING = [
     "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-1.png",
     "img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-2.png",
@@ -76,6 +80,7 @@ class Character extends MovableObject {
     super().loadImage(
       "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png"
     );
+    this.loadImages(this.IMAGES_STANDING);
     this.loadImages(this.IMAGES_WALKING);
     this.loadImages(this.IMAGES_JUMPING);
     this.loadImages(this.IMAGES_DEAD);
@@ -146,7 +151,7 @@ class Character extends MovableObject {
     else if (this.isHurt()) this.playAnimation(this.IMAGES_HURT);
     else if (this.isAboveGround()) this.playAnimation(this.IMAGES_JUMPING);
     else if (this.isMoving()) this.playAnimation(this.IMAGES_WALKING);
-    else if (this.isIdling()) this.playAnimation(this.IMAGES_IDLING);
+    else this.playAnimation(this.IMAGES_STANDING);
   }
 
   initiateDead() {
