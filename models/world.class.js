@@ -52,10 +52,23 @@ class World {
     this.renderFixedObjects();
     this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
     this.ctx.translate(-this.camera_x, 0); // return camera after everything is drawed (otherwise it would translate until infinity)
+    this.checkDevice();
     let self = this;
     requestAnimationFrame(function () {
       self.draw();
     });
+  }
+
+  checkDevice() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.getElementById('keyboardinstructions').style.display = 'none';
+      document.getElementById('enterfullscreen').style.display = 'none';
+      document.getElementById('lowerbuttons').style.display = 'flex';
+    } else {
+      document.getElementById('keyboardinstructions').style.display = 'block';
+      document.getElementById('enterfullscreen').style.display = 'flex';
+      document.getElementById('lowerbuttons').style.display = 'none';
+    }
   }
 
   renderObjects() {

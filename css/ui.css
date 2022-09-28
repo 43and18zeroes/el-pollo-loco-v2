@@ -21,9 +21,12 @@
 }
 
 .lower__buttons {
-    display: flex;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+#lowerbuttons {
+    display: none;
 }
 
 .lower__buttons__left {

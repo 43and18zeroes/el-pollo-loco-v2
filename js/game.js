@@ -16,7 +16,6 @@ function init() {
 
 function startGame() {
     pepeStartMP3.play();
-    hideFullscreenIconOnMobile();
     initLevel();
     world = new World(canvas, keyboard);
     initLevelMedia();
@@ -34,12 +33,6 @@ function initLevelMedia() {
         collectBottlesMP3.play();
     }, 2000);
 
-}
-
-function hideFullscreenIconOnMobile() {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        document.getElementById('enterfullscreen').style.display = 'none';
-    }
 }
 
 window.addEventListener("keydown", (e) => {
