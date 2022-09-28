@@ -175,7 +175,7 @@ class World {
       if (this.character.isLandingOnTop(enemy)) {
         this.chickenDies(enemy);
       }
-      else if (this.character.isColliding(enemy)) {
+      else if (this.character.isColliding(enemy) && !this.character.isAboveGround()) {
         this.character.hit();
         this.healthBar.setPercentageHealthBar(this.character.energy);
       }
