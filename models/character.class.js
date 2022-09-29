@@ -180,6 +180,7 @@ class Character extends MovableObject {
       document.getElementById("youlost").style.display = "inline";
       if (this.world.soundOn == true) {
         this.youLostScreenMP3.play();
+        for (let i = 1; i < 9999; i++) window.clearInterval(i);
       }
     }, 3500);
   }

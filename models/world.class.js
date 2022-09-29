@@ -3,7 +3,6 @@ class World {
   healthBar = new HealthBar();
   coinAmountBar = new coinAmountBar();
   bottleAmountBar = new bottleAmountBar();
-  // startScreen = new StartScreen;
   ThrowableObjects = [];
 
   level = level1;
