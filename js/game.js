@@ -1,6 +1,7 @@
 let canvas;
 let world;
 let keyboard = new Keyboard(); // Instances keyboard object
+let gameOver;
 
 pepeStartMP3 = new Audio("audio/pepe-start.mp3");
 collectBottlesMP3 = new Audio("audio/collect-bottles.mp3");
@@ -15,6 +16,7 @@ function init() {
 }
 
 function startGame() {
+    gameOver = false;
     pepeStartMP3.play();
     initLevel();
     world = new World(canvas, keyboard);
@@ -37,27 +39,27 @@ function initLevelMedia() {
 }
 
 window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 39) {
+    if (e.keyCode == 39 && gameOver == false) {
         keyboard.RIGHT = true;
     }
 
-    if (e.keyCode == 37) {
+    if (e.keyCode == 37 && gameOver == false) {
         keyboard.LEFT = true;
     }
 
-    if (e.keyCode == 38) {
+    if (e.keyCode == 38 && gameOver == false) {
         keyboard.UP = true;
     }
 
-    if (e.keyCode == 40) {
+    if (e.keyCode == 40 && gameOver == false) {
         keyboard.DOWN = true;
     }
 
-    if (e.keyCode == 32) {
+    if (e.keyCode == 32 && gameOver == false) {
         keyboard.SPACE = true;
     }
 
-    if (e.keyCode == 68) {
+    if (e.keyCode == 68 && gameOver == false) {
         keyboard.D = true;
     }
 });

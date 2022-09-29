@@ -155,7 +155,8 @@ class Character extends MovableObject {
   }
 
   initiateDead() {
-    this.disableKeys();
+    // this.disableKeys();
+    gameOver = true;
     if (!this.walking_sound.paused) {
       this.walking_sound.pause();
     }

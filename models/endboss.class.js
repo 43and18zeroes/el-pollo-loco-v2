@@ -69,7 +69,8 @@ class Endboss extends MovableObject {
   }
 
   bossDies() {
-    this.disableKeys();
+    // this.disableKeys();
+    gameOver = true;
     this.endBossDead = true;
     this.endBossIntervals.forEach(clearInterval);
     this.bossDiesAnimation();
@@ -92,7 +93,6 @@ class Endboss extends MovableObject {
 
   showGameOverScreen() {
     setTimeout(() => {
-      this.disableKeys();
       document.getElementById("youwon").style.display = "inline";
       if (this.world.soundOn == true) {
         this.endScreenMP3.play();
