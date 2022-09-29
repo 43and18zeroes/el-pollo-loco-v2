@@ -22,11 +22,12 @@ function startGame() {
 }
 
 function initLevelMedia() {
+    document.getElementById("youlost").style.display = "none";
+    document.getElementById("replaybutton").style.display = "none";
     document.getElementById("pepestart").style.display = "inline";
     document.getElementById("startbutton").style.display = "none";
     document.getElementById("startscreen").style.display = "none";
-    /* wait to avoid black screen caused by loading */
-    setTimeout(() => {
+    setTimeout(() => { /* wait to avoid black screen caused by loading */
         document.getElementById("pepestart").style.display = "none";
     }, 1500);
     setTimeout(() => {

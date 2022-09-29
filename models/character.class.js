@@ -178,10 +178,11 @@ class Character extends MovableObject {
   showYouLostScreen() {
     setTimeout(() => {
       document.getElementById("youlost").style.display = "inline";
+      document.getElementById("replaybutton").style.display = "flex";
       if (this.world.soundOn == true) {
         this.youLostScreenMP3.play();
-        for (let i = 1; i < 9999; i++) window.clearInterval(i);
       }
+      for (let i = 1; i < 9999; i++) window.clearInterval(i);
     }, 3500);
   }
 
