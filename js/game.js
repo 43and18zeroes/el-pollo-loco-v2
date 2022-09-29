@@ -24,18 +24,22 @@ function startGame() {
 }
 
 function initLevelMedia() {
-    document.getElementById("youlost").style.display = "none";
-    document.getElementById("replaybutton").style.display = "none";
-    document.getElementById("pepestart").style.display = "inline";
-    document.getElementById("startbutton").style.display = "none";
-    document.getElementById("startscreen").style.display = "none";
+    handleScreensAndButtons();
     setTimeout(() => { /* wait to avoid black screen caused by loading */
         document.getElementById("pepestart").style.display = "none";
     }, 1500);
     setTimeout(() => {
         collectBottlesMP3.play();
     }, 2000);
+}
 
+function handleScreensAndButtons() {
+    document.getElementById("youlost").style.display = "none";
+    document.getElementById("youwon").style.display = "none";
+    document.getElementById("replaybutton").style.display = "none";
+    document.getElementById("pepestart").style.display = "inline";
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("startscreen").style.display = "none";
 }
 
 window.addEventListener("keydown", (e) => {

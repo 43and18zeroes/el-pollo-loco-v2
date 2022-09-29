@@ -92,8 +92,10 @@ class Endboss extends MovableObject {
   }
 
   showGameOverScreen() {
+    gameOver = true;
     setTimeout(() => {
       document.getElementById("youwon").style.display = "inline";
+      document.getElementById("replaybutton").style.display = "flex";
       if (this.world.soundOn == true) {
         this.endScreenMP3.play();
         for (let i = 1; i < 9999; i++) window.clearInterval(i);
