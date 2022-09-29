@@ -138,6 +138,7 @@ class World {
       this.checkCollisionsCoins();
       this.checkCollisionsBottles();
       this.checkCollisionsBottlesToBoss();
+      this.checkCollisionsBottlesToGround();
       this.checkThrowObjects();
       this.checkIfBossIsDead();
       this.checkCollisionsBoss();
@@ -265,6 +266,18 @@ class World {
         }
       }
     });
+  }
+
+  checkCollisionsBottlesToGround() {
+    this.ThrowableObjects.forEach((ThrowableObject) => {
+      if (this.bottleOnGround(ThrowableObject)) {
+        this.ThrowableObjects[0].bottleBreak();
+      }
+    });
+  }
+
+  bottleOnGround(ThrowableObject) {
+    return (ThrowableObject.y > 310);
   }
 
   damageBoss() {
