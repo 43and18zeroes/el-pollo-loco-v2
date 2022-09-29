@@ -275,7 +275,6 @@ class World {
       this.endBoss[0].runLeft();
     }
     setTimeout(() => {
-      this.ThrowableObjects.splice(0, 1);
       this.bossHit = false;
     }, 1000);
   }
