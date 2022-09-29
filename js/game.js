@@ -93,16 +93,21 @@ window.addEventListener("keyup", (e) => {
 function initTouchButtons() {
     document.getElementById('arrowleft').addEventListener('touchstart', (event) => {
         event.preventDefault();
-        keyboard.LEFT = true;
+        if (gameOver == false) {
+            keyboard.LEFT = true;
+        }
     });
 
     document.getElementById('arrowleft').addEventListener('touchend', (event) => {
+        event.preventDefault();
         keyboard.LEFT = false;
     });
 
     document.getElementById('arrowright').addEventListener('touchstart', (event) => {
         event.preventDefault();
-        keyboard.RIGHT = true;
+        if (gameOver == false) {
+            keyboard.RIGHT = true;
+        }
     });
 
     document.getElementById('arrowright').addEventListener('touchend', (event) => {
@@ -111,7 +116,9 @@ function initTouchButtons() {
 
     document.getElementById('arrowjump').addEventListener('touchstart', (event) => {
         event.preventDefault();
-        keyboard.SPACE = true;
+        if (gameOver == false) {
+            keyboard.SPACE = true;
+        }
     });
 
     document.getElementById('arrowjump').addEventListener('touchend', (event) => {
@@ -120,7 +127,9 @@ function initTouchButtons() {
 
     document.getElementById('arrowthrow').addEventListener('touchstart', (event) => {
         event.preventDefault();
-        keyboard.D = true;
+        if (gameOver == false) {
+            keyboard.D = true;
+        }
     });
 
     document.getElementById('arrowthrow').addEventListener('touchend', (event) => {
