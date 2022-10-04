@@ -69,7 +69,6 @@ class Endboss extends MovableObject {
   }
 
   bossDies() {
-    // this.disableKeys();
     gameOver = true;
     this.endBossDead = true;
     this.endBossIntervals.forEach(clearInterval);
@@ -88,29 +87,19 @@ class Endboss extends MovableObject {
         clearInterval(id);
       }
     }, 200);
-    this.showGameOverScreen();
+    this.showYouWonScreen();
   }
 
-  showGameOverScreen() {
+  showYouWonScreen() {
     gameOver = true;
     setTimeout(() => {
       document.getElementById("youwon").style.display = "inline";
       document.getElementById("replaybutton").style.display = "flex";
       if (this.world.soundOn == true) {
         this.endScreenMP3.play();
-        for (let i = 1; i < 9999; i++) window.clearInterval(i);
       }
+      for (let i = 1; i < 9999; i++) window.clearInterval(i);
     }, 3500);
-  }
-
-  disableKeys() {
-    window.addEventListener(
-      "keydown",
-      (e) => {
-        e.stopImmediatePropagation();
-      },
-      true
-    );
   }
 
   bossEnraged() {
