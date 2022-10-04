@@ -2,6 +2,7 @@ let canvas;
 let world;
 let keyboard = new Keyboard(); // Instances keyboard object
 let gameOver;
+let soundOn = true;
 
 pepeStartMP3 = new Audio("audio/pepe-start.mp3");
 collectBottlesMP3 = new Audio("audio/collect-bottles.mp3");
@@ -150,13 +151,13 @@ function activateFullscreen() {
 
 function soundOnOff() {
     const soundOnOffIcon = document.getElementById('soundonofficon');
-    if (world.soundOn == true) {
-        world.soundOn = false;
+    if (soundOn == true) {
+        soundOn = false;
         soundOnOffIcon.innerText = 'volume_off';
         world.game_music.pause();
         collectBottlesMP3.pause();
     } else {
-        world.soundOn = true;
+        soundOn = true;
         soundOnOffIcon.innerText = 'volume_up';
         world.game_music.play();
     }

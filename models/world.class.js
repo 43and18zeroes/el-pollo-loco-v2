@@ -15,8 +15,6 @@ class World {
   game_music = new Audio("audio/mexican-huapango-banda-2715.mp3");
   bottleCollectedMP3 = new Audio("audio/collect-bottle.mp3");
 
-  soundOn = true;
-
   canvas;
   ctx;
   keyboard;
@@ -192,7 +190,7 @@ class World {
   }
 
   chickenDies(enemy) {
-    if (this.soundOn == true) {
+    if (soundOn == true) {
       this.playboingOnChickenHeadMP3();
     }
     this.character.speedY = 6.5;
@@ -211,7 +209,7 @@ class World {
   checkCollisionsCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
-        if (this.soundOn == true) {
+        if (soundOn == true) {
           this.playCoinCollectedMP3();
         }
         const coinToRemove = this.coins.indexOf(coin);
@@ -245,7 +243,7 @@ class World {
   }
 
   collectBottle(bottle) {
-    if (this.soundOn == true) {
+    if (soundOn == true) {
       this.bottleCollectedMP3.play();
     }
     const bottleToRemove = this.bottles.indexOf(bottle);

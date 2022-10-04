@@ -69,11 +69,10 @@ class Endboss extends MovableObject {
   }
 
   bossDies() {
-    gameOver = true;
     this.endBossDead = true;
     this.endBossIntervals.forEach(clearInterval);
     this.bossDiesAnimation();
-    if (this.world.soundOn == true) {
+    if (soundOn == true) {
       this.bossDefeatedMP3.play();
     }
   }
@@ -95,7 +94,7 @@ class Endboss extends MovableObject {
     setTimeout(() => {
       document.getElementById("youwon").style.display = "inline";
       document.getElementById("replaybutton").style.display = "flex";
-      if (this.world.soundOn == true) {
+      if (soundOn == true) {
         this.endScreenMP3.play();
       }
       for (let i = 1; i < 9999; i++) window.clearInterval(i);

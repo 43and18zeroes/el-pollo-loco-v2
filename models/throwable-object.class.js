@@ -57,7 +57,7 @@ class ThrowableObject extends MovableObject {
 
     bottleBreak() {
         this.throwableObjectsIntervals.forEach(clearInterval);
-        if (world.soundOn == true) {
+        if (soundOn == true) {
             this.bottle_breaking_sound.volume = 0.01;
             this.bottle_breaking_sound.play();
         }

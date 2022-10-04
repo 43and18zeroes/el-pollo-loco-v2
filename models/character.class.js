@@ -95,7 +95,7 @@ class Character extends MovableObject {
     this.x += this.speed;
     // character move right -> sound plays
     this.otherDirection = false;
-    if (this.world.soundOn == true && this.y >= 180) {
+    if (soundOn == true && this.y >= 180) {
       this.walking_sound.play();
     }
   }
@@ -103,7 +103,7 @@ class Character extends MovableObject {
   moveLeft() {
     this.x -= this.speed;
     this.otherDirection = true;
-    if (this.world.soundOn == true && this.y >= 180) {
+    if (soundOn == true && this.y >= 180) {
       this.walking_sound.play();
     }
   }
@@ -166,7 +166,7 @@ class Character extends MovableObject {
     this.loadImage(this.IMAGES_DEAD[this.characterDiesAuxVar]);
     this.y += 15;
     this.characterDiesAuxVar++;
-    if (this.world.soundOn == true) {
+    if (soundOn == true) {
       this.pepeDyingScreamMP3.play();
     }
     if (this.characterDiesAuxVar == this.IMAGES_DEAD.length) {
@@ -179,7 +179,7 @@ class Character extends MovableObject {
     setTimeout(() => {
       document.getElementById("youlost").style.display = "inline";
       document.getElementById("replaybutton").style.display = "flex";
-      if (this.world.soundOn == true) {
+      if (soundOn == true) {
         this.youLostScreenMP3.play();
       }
       for (let i = 1; i < 9999; i++) window.clearInterval(i);
