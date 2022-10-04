@@ -184,6 +184,7 @@ class Character extends MovableObject {
       }
       for (let i = 1; i < 9999; i++) window.clearInterval(i);
       this.world.game_music.pause();
+      world.ThrowableObjects = [];
     }, 3500);
   }
 
