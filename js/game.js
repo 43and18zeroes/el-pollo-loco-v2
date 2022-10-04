@@ -18,19 +18,24 @@ function init() {
 
 function startGame() {
     gameOver = false;
-    pepeStartMP3.play();
+    if (soundOn == true) {
+        pepeStartMP3.play();
+    }
     initLevel();
     world = new World(canvas, keyboard);
     initLevelMedia();
 }
 
 function initLevelMedia() {
+    soundOnOffRestart();
     handleScreensAndButtons();
     setTimeout(() => { /* wait to avoid black screen caused by loading */
         document.getElementById("pepestart").style.display = "none";
     }, 1500);
     setTimeout(() => {
-        collectBottlesMP3.play();
+        if (soundOn == true) {
+            collectBottlesMP3.play();
+        }
     }, 2000);
 }
 
@@ -159,6 +164,18 @@ function soundOnOff() {
     } else {
         soundOn = true;
         soundOnOffIcon.innerText = 'volume_up';
-        world.game_music.play();
+        if (world.game_music.paused) {
+            world.game_music.volume = 0.1;
+            world.game_music.play();
+        }
+    }
+}
+
+function soundOnOffRestart() {
+    const soundOnOffIcon = document.getElementById('soundonofficon');
+    if (soundOnOffIcon.innerText == 'volume_off') {
+        soundOn = false;
+    } else {
+        soundOn = true;
     }
 }

@@ -183,6 +183,7 @@ class Character extends MovableObject {
         this.youLostScreenMP3.play();
       }
       for (let i = 1; i < 9999; i++) window.clearInterval(i);
+      this.world.game_music.pause();
     }, 3500);
   }
 
