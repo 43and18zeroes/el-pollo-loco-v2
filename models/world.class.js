@@ -39,7 +39,6 @@ class World {
   setWorld() {
     this.character.world = this;
     this.endBoss[0].world = this;
-    this.ThrowableObjects.world = this;
   }
 
   draw() {
