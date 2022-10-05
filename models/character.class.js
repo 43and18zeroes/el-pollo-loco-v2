@@ -155,6 +155,7 @@ class Character extends MovableObject {
   }
 
   initiateDead() {
+    this.bottleAmount = 0;
     gameOver = true;
     if (!this.walking_sound.paused) {
       this.walking_sound.pause();

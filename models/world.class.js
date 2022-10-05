@@ -151,9 +151,7 @@ class World {
       this.character.bottleAmount > 0
     ) {
       this.character.bottleAmount--;
-      this.bottleAmountBar.setPercentageBottleBarAmount(
-        this.character.bottleAmount
-      );
+      this.bottleAmountBar.setPercentageBottleBarAmount(this.character.bottleAmount);
       this.throwBottle();
     }
   }
