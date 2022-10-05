@@ -27,14 +27,6 @@ function startGame() {
 }
 
 function initLevelMedia() {
-    if (!(collectBottlesMP3.paused)) {
-        collectBottlesMP3.pause();
-        collectBottlesMP3.currentTime = 0;
-    }
-    if (!(world.endBoss[0].endScreenMP3.paused)) {
-        world.endBoss[0].endScreenMP3.pause();
-        world.endBoss[0].endScreenMP3.currentTime = 0;
-    }
     soundOnOffRestart();
     handleScreensAndButtons();
     setTimeout(() => { /* wait to avoid black screen caused by loading */
@@ -186,4 +178,16 @@ function soundOnOffRestart() {
     } else {
         soundOn = true;
     }
+}
+
+function endSoundOnRestart() {
+    world.endBoss[0].endScreenMP3.pause();
+    world.endBoss[0].endScreenMP3.currentTime = 0;
+    world.character.youLostScreenMP3.pause();
+    world.character.youLostScreenMP3.currentTime = 0;
+}
+
+function restartGame() {
+    endSoundOnRestart();
+    startGame();
 }
