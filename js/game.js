@@ -148,8 +148,8 @@ function initTouchButtons() {
 }
 
 function activateFullscreen() {
-    document.getElementById('canvas').requestFullscreen();
-
+    document.getElementById('canvas-frame').requestFullscreen();
+    document.getElementById('canvas').classList.add('fullscreen-res');
 }
 
 function soundOnOff() {

@@ -61,7 +61,8 @@
 }
 
 .fullscreen-res {
-    background-size: 84.375% 100%;
+    width: 100%;
+    height: 100%;
 }
 
 /* start screen */
