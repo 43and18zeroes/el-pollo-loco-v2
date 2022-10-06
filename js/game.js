@@ -147,12 +147,19 @@ function initTouchButtons() {
     });
 }
 
-function activateFullscreen() {
-    document.getElementById('canvas-frame').requestFullscreen();
-    document.getElementById('canvas').classList.add('fullscreen-res');
-    document.getElementById('youlost').classList.add('fullscreen-res');
-    document.getElementById('youwon').classList.add('fullscreen-res');
-    document.getElementById('pepestart').classList.add('fullscreen-res');
+function toggleFullscreen() {
+    if (document.getElementById('fullscreenicon').innerText == 'fullscreen') {
+        document.getElementById('canvas-frame').requestFullscreen();
+        document.getElementById('canvas').classList.add('fullscreen-res');
+        document.getElementById('youlost').classList.add('fullscreen-res');
+        document.getElementById('youwon').classList.add('fullscreen-res');
+        document.getElementById('pepestart').classList.add('fullscreen-res');
+        document.getElementById('fullscreenicon').innerText = 'fullscreen_exit';
+    }
+    else {
+        document.getElementById('fullscreenicon').innerText = 'fullscreen';
+        document.exitFullscreen();
+    }
 }
 
 function soundOnOff() {
