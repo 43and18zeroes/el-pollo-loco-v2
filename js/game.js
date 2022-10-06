@@ -149,17 +149,21 @@ function initTouchButtons() {
 
 function toggleFullscreen() {
     if (document.getElementById('fullscreenicon').innerText == 'fullscreen') {
-        document.getElementById('canvas-frame').requestFullscreen();
-        document.getElementById('canvas').classList.add('fullscreen-res');
-        document.getElementById('youlost').classList.add('fullscreen-res');
-        document.getElementById('youwon').classList.add('fullscreen-res');
-        document.getElementById('pepestart').classList.add('fullscreen-res');
-        document.getElementById('fullscreenicon').innerText = 'fullscreen_exit';
+        addFullscreenClasses();
     }
     else {
         document.getElementById('fullscreenicon').innerText = 'fullscreen';
         document.exitFullscreen();
     }
+}
+
+function addFullscreenClasses() {
+    document.getElementById('canvas-frame').requestFullscreen();
+    document.getElementById('canvas').classList.add('fullscreen-res');
+    document.getElementById('youlost').classList.add('fullscreen-res');
+    document.getElementById('youwon').classList.add('fullscreen-res');
+    document.getElementById('pepestart').classList.add('fullscreen-res');
+    document.getElementById('fullscreenicon').innerText = 'fullscreen_exit';
 }
 
 document.addEventListener("fullscreenchange", function () {
