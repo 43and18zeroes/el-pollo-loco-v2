@@ -162,6 +162,14 @@ function toggleFullscreen() {
     }
 }
 
+document.addEventListener("fullscreenchange", function () {
+    if (window.innerHeight == screen.height) {
+        document.getElementById('fullscreenicon').innerText = 'fullscreen_exit';
+    } else {
+        document.getElementById('fullscreenicon').innerText = 'fullscreen';
+    }
+});
+
 function soundOnOff() {
     const soundOnOffIcon = document.getElementById('soundonofficon');
     if (soundOn == true) {
