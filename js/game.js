@@ -150,6 +150,9 @@ function initTouchButtons() {
 function activateFullscreen() {
     document.getElementById('canvas-frame').requestFullscreen();
     document.getElementById('canvas').classList.add('fullscreen-res');
+    document.getElementById('youlost').classList.add('fullscreen-res');
+    document.getElementById('youwon').classList.add('fullscreen-res');
+    document.getElementById('pepestart').classList.add('fullscreen-res');
 }
 
 function soundOnOff() {

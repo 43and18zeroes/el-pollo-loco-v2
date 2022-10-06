@@ -81,3 +81,12 @@
         display: none;
     }
 }
+
+/* new fullscreen */
+
+#youwon img,
+#youlost img,
+#pepestart img {
+    width: 100%;
+    height: 100%
+}
