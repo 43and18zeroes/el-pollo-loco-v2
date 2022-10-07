@@ -1,5 +1,7 @@
 class ThrowableObject extends MovableObject {
 
+    timeout;
+
     offset = {
         top: 5,
         bottom: 5,
@@ -59,15 +61,12 @@ class ThrowableObject extends MovableObject {
         console.log('boottleBreak');
         this.throwableObjectsIntervals.forEach(clearInterval);
         playSound(this.bottle_breaking_sound, 0.01);
-        // if (soundOn == true) {
-        //     this.bottle_breaking_sound.volume = 0.01;
-        //     this.bottle_breaking_sound.play();
-        // }
         this.playAnimation(this.IMAGES_BREAKING);
         setTimeout(() => {
             this.x = 0;
         }, 100);
-        setTimeout(() => {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
             world.ThrowableObjects.splice(0, 1);
         }, 1000);
     }

@@ -146,15 +146,15 @@ class World {
   i = 1;
 
   checkThrowObjects() {
-    console.log(this.i + " this.keyboard.D", this.keyboard.D,
-      "!this.alreadyThrown", !this.alreadyThrown,
-      "this.character.bottleAmount > 0", this.character.bottleAmount > 0)
+    // console.log(this.i + " this.keyboard.D", this.keyboard.D,
+    //   "!this.alreadyThrown", !this.alreadyThrown,
+    //   "this.character.bottleAmount > 0", this.character.bottleAmount > 0)
     if (
       this.keyboard.D &&
       !this.alreadyThrown &&
       this.character.bottleAmount > 0
     ) {
-      this.i++;
+      // this.i++;
       this.character.bottleAmount--;
       this.bottleAmountBar.setPercentageBottleBarAmount(this.character.bottleAmount);
       this.throwBottle();
@@ -278,6 +278,7 @@ class World {
     this.ThrowableObjects.forEach((ThrowableObject) => {
       if (this.bottleOnGround(ThrowableObject)) {
         this.ThrowableObjects[0].bottleBreak();
+        this.ThrowableObjects = [];
       }
     });
   }
