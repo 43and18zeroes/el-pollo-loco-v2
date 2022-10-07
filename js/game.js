@@ -174,6 +174,17 @@ document.addEventListener("fullscreenchange", function () {
     }
 });
 
+
+function playSound(sound, volume) {
+    if(soundOn) {
+        if(volume) {
+            sound.volume = 0.01;
+        }
+
+        sound.play();
+    }
+}
+
 function soundOnOff() {
     const soundOnOffIcon = document.getElementById('soundonofficon');
     if (soundOn == true) {

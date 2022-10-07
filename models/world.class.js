@@ -143,12 +143,18 @@ class World {
     }, 50);
   }
 
+  i = 1;
+
   checkThrowObjects() {
+    console.log(this.i + " this.keyboard.D", this.keyboard.D,
+      "!this.alreadyThrown", !this.alreadyThrown,
+      "this.character.bottleAmount > 0", this.character.bottleAmount > 0)
     if (
       this.keyboard.D &&
-      this.alreadyThrown == false &&
+      !this.alreadyThrown &&
       this.character.bottleAmount > 0
     ) {
+      this.i++;
       this.character.bottleAmount--;
       this.bottleAmountBar.setPercentageBottleBarAmount(this.character.bottleAmount);
       this.throwBottle();
@@ -157,14 +163,18 @@ class World {
 
   throwBottle() {
     this.alreadyThrown = true;
+    this.createThrowableBottle();
+    setTimeout(() => {
+      this.alreadyThrown = false;
+    }, 1000);
+  }
+
+  createThrowableBottle() {
     let bottle = new ThrowableObject(
       this.character.x + 50,
       this.character.y + 110
     );
     this.ThrowableObjects.push(bottle);
-    setTimeout(() => {
-      this.alreadyThrown = false;
-    }, 1000);
   }
 
   checkCollisionsChicken() {

@@ -56,11 +56,13 @@ class ThrowableObject extends MovableObject {
     }
 
     bottleBreak() {
+        console.log('boottleBreak');
         this.throwableObjectsIntervals.forEach(clearInterval);
-        if (soundOn == true) {
-            this.bottle_breaking_sound.volume = 0.01;
-            this.bottle_breaking_sound.play();
-        }
+        playSound(this.bottle_breaking_sound, 0.01);
+        // if (soundOn == true) {
+        //     this.bottle_breaking_sound.volume = 0.01;
+        //     this.bottle_breaking_sound.play();
+        // }
         this.playAnimation(this.IMAGES_BREAKING);
         setTimeout(() => {
             this.x = 0;
