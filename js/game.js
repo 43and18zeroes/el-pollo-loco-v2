@@ -17,6 +17,10 @@ function init() {
 }
 
 function startGame() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    && screen.availHeight < screen.availWidth) {
+        forceFullscreen();
+    }
     gameOver = false;
     if (soundOn == true) {
         pepeStartMP3.play();
@@ -155,6 +159,10 @@ function toggleFullscreen() {
         document.getElementById('fullscreenicon').innerText = 'fullscreen';
         document.exitFullscreen();
     }
+}
+
+function forceFullscreen() {
+        addFullscreenClasses();
 }
 
 function addFullscreenClasses() {
