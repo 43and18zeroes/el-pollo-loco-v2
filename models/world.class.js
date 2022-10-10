@@ -278,7 +278,6 @@ class World {
     this.ThrowableObjects.forEach((ThrowableObject) => {
       if (this.bottleOnGround(ThrowableObject)) {
         this.ThrowableObjects[0].bottleBreak();
-        this.ThrowableObjects = [];
       }
     });
   }

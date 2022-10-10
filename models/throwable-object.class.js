@@ -11,6 +11,8 @@ class ThrowableObject extends MovableObject {
 
     throwableObjectsIntervals = [];
 
+    animationStarted = true;
+
     IMAGES_ROTATING = [
         'img/6.botella/Rotación/Mesa de trabajo 1 copia 3.png',
         'img/6.botella/Rotación/Mesa de trabajo 1 copia 4.png',
@@ -58,16 +60,19 @@ class ThrowableObject extends MovableObject {
     }
 
     bottleBreak() {
-        console.log('boottleBreak');
-        this.throwableObjectsIntervals.forEach(clearInterval);
-        playSound(this.bottle_breaking_sound, 0.01);
-        this.playAnimation(this.IMAGES_BREAKING);
-        setTimeout(() => {
-            this.x = 0;
-        }, 100);
-        clearTimeout(this.timeout);
-        this.timeout = setTimeout(() => {
-            world.ThrowableObjects.splice(0, 1);
-        }, 1000);
+        if (this.animationStarted) {
+            this.animationStarted = false;
+            this.throwableObjectsIntervals.forEach(clearInterval);
+            playSound(this.bottle_breaking_sound, 0.01);
+            this.playAnimation(this.IMAGES_BREAKING);
+            setTimeout(() => {
+                this.x = 0;
+            }, 100);
+            clearTimeout(this.timeout);
+            this.timeout = setTimeout(() => {
+                world.ThrowableObjects.splice(0, 1);
+                this.animationStarted = true;
+            }, 1000);
+        }
     }
 }
