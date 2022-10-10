@@ -48,6 +48,7 @@ body {
     font-family: 'zabars', Arial, Helvetica, sans-serif;
     color: #424242;
     margin: 0px;
+    user-select: none;
 }
 
 h1 {

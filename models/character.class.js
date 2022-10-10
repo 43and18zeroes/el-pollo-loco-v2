@@ -129,16 +129,10 @@ class Character extends MovableObject {
   }
 
   move() {
-    // sound pauses during a draw() cycle in order to stop playing when character isn't walking
     this.walking_sound.pause();
     if (this.canMoveRight()) this.moveRight();
-
     if (this.canMoveLeft()) this.moveLeft();
-
     if (this.canJump()) this.jump();
-
-    // changes cam position inverted to the x of character
-    // + 100 so character is away from the canvas border
     this.world.camera_x = -this.x + 100;
   }
 
