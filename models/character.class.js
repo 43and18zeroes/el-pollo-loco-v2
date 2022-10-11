@@ -190,7 +190,7 @@ class Character extends MovableObject {
 
     let idPlay = setInterval(() => {
       this.play();
-    }, 100);
+    }, 50);
 
     this.intervalIds.push(idMove, idPlay);
   }
