@@ -171,7 +171,7 @@ class World {
 
   createThrowableBottle() {
     let bottle = new ThrowableObject(
-      this.character.x + 50,
+      this.character.x + 30,
       this.character.y + 110
     );
     this.ThrowableObjects.push(bottle);
