@@ -78,7 +78,7 @@ class ThrowableObject extends MovableObject {
             this.timeout = setTimeout(() => {
                 world.ThrowableObjects.splice(0, 1);
                 this.animationStarted = true;
-            }, 1000);
+            }, 500);
         }
     }
 }
