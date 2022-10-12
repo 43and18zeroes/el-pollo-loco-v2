@@ -19,7 +19,6 @@ class DrawableObject {
         this.img.src = path;
     }
 
-
     draw(ctx) {
         try {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
@@ -29,29 +28,6 @@ class DrawableObject {
         }
     }
 
-
-    // drawFrame(ctx) {
-    //     ctx.beginPath();
-    //     ctx.lineWidth = '1';
-    //     ctx.strokeStyle = 'blue';
-    //     ctx.rect(this.x, this.y, this.width, this.height);
-    //     ctx.stroke();
-    // }
-
-
-    // drawHitbox(ctx) {
-    //     ctx.beginPath();
-    //     ctx.lineWidth = '1';
-    //     ctx.strokeStyle = 'red';
-    //     ctx.rect(this.x + this.offset.left, this.y + this.offset.top, this.width - this.offset.left - this.offset.right, this.height - this.offset.top - this.offset.bottom);
-    //     ctx.stroke();
-    // };
-
-
-    /**
-     * 
-     * @param {Array} arr - ['img/image1.png', 'img/image2.png', ...]
-     */
      loadImages(arr) {
         arr.forEach((path) => {
             let img = new Image();
@@ -59,5 +35,4 @@ class DrawableObject {
             this.imageCache[path] = img; // global
         });
     }
-
 }

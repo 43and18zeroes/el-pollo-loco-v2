@@ -1,13 +1,11 @@
 class MovableObject extends DrawableObject {
     speed = 0.15;
     otherDirection = false;
-    // two variables to control falling speed
     speedY = 0;
     acceleration = 0.5;
     energy = 100;
     lastHit = 0;
     lastKeyboardUsage = 0;
-
 
     applyGravity() {
         setInterval(() => {
@@ -18,41 +16,33 @@ class MovableObject extends DrawableObject {
         }, 1000 / 60)
     }
 
-
     isAboveGround() {
-        if (this instanceof ThrowableObject) { // ThrowableObject should always fall
+        if (this instanceof ThrowableObject) {
             return true;
         } else {
             return this.y < 180;
         }
     }
 
-
     playAnimation(images) {
-        let i = this.currentImage % images.length; // let i = 7 % 6; => 1, Rest 1
-        // i = 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0
+        let i = this.currentImage % images.length;
         let path = images[i];
         this.img = this.imageCache[path];
         this.currentImage++;
     }
 
-
     moveRight() {
         this.x += this.speed;
-        // character move right -> sound plays
     }
-
 
     moveLeft() {
         this.x -= this.speed;
     }
 
-
     jump() {
-
+        
     }
 
-    // character.isColliding(chicken);
     isColliding(mo) {
         return this.x + this.width - this.offset.right > mo.x + mo.offset.left &&
             this.y + this.height - this.offset.bottom > mo.y + mo.offset.top &&

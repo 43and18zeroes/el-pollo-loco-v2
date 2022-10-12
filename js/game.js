@@ -1,6 +1,6 @@
 let canvas;
 let world;
-let keyboard = new Keyboard(); // Instances keyboard object
+let keyboard = new Keyboard();
 let gameOver;
 let soundOn = true;
 
@@ -33,7 +33,7 @@ function startGame() {
 function initLevelMedia() {
     soundOnOffRestart();
     handleScreensAndButtons();
-    setTimeout(() => { /* wait to avoid black screen caused by loading */
+    setTimeout(() => {
         document.getElementById("pepestart").style.display = "none";
     }, 1500);
     setTimeout(() => {
@@ -56,23 +56,18 @@ window.addEventListener("keydown", (e) => {
     if (e.keyCode == 39 && gameOver == false) {
         keyboard.RIGHT = true;
     }
-
     if (e.keyCode == 37 && gameOver == false) {
         keyboard.LEFT = true;
     }
-
     if (e.keyCode == 38 && gameOver == false) {
         keyboard.UP = true;
     }
-
     if (e.keyCode == 40 && gameOver == false) {
         keyboard.DOWN = true;
     }
-
     if (e.keyCode == 32 && gameOver == false) {
         keyboard.SPACE = true;
     }
-
     if (e.keyCode == 68 && gameOver == false) {
         keyboard.D = true;
     }
@@ -82,23 +77,18 @@ window.addEventListener("keyup", (e) => {
     if (e.keyCode == 39) {
         keyboard.RIGHT = false;
     }
-
     if (e.keyCode == 37) {
         keyboard.LEFT = false;
     }
-
     if (e.keyCode == 38) {
         keyboard.UP = false;
     }
-
     if (e.keyCode == 40) {
         keyboard.DOWN = false;
     }
-
     if (e.keyCode == 32) {
         keyboard.SPACE = false;
     }
-
     if (e.keyCode == 68) {
         keyboard.D = false;
     }
@@ -111,41 +101,34 @@ function initTouchButtons() {
             keyboard.LEFT = true;
         }
     });
-
     document.getElementById('arrowleft').addEventListener('touchend', (event) => {
         event.preventDefault();
         keyboard.LEFT = false;
     });
-
     document.getElementById('arrowright').addEventListener('touchstart', (event) => {
         event.preventDefault();
         if (gameOver == false) {
             keyboard.RIGHT = true;
         }
     });
-
     document.getElementById('arrowright').addEventListener('touchend', (event) => {
         keyboard.RIGHT = false;
     });
-
     document.getElementById('arrowjump').addEventListener('touchstart', (event) => {
         event.preventDefault();
         if (gameOver == false) {
             keyboard.SPACE = true;
         }
     });
-
     document.getElementById('arrowjump').addEventListener('touchend', (event) => {
         keyboard.SPACE = false;
     });
-
     document.getElementById('arrowthrow').addEventListener('touchstart', (event) => {
         event.preventDefault();
         if (gameOver == false) {
             keyboard.D = true;
         }
     });
-
     document.getElementById('arrowthrow').addEventListener('touchend', (event) => {
         keyboard.D = false;
     });
