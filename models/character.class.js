@@ -73,9 +73,7 @@ class Character extends MovableObject {
   boingOnChickenHeadMP3 = new Audio("audio/boing.mp3");
 
   constructor() {
-    super().loadImage(
-      "img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png"
-    );
+    super().loadImage("img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png");
     this.loadImages(this.IMAGES_STANDING);
     this.loadImages(this.IMAGES_WALKING);
     this.loadImages(this.IMAGES_JUMPING);
@@ -185,11 +183,9 @@ class Character extends MovableObject {
     let idMove = setInterval(() => {
       this.move();
     }, 1000 / 60);
-
     let idPlay = setInterval(() => {
       this.play();
     }, 50);
-
     this.intervalIds.push(idMove, idPlay);
   }
 

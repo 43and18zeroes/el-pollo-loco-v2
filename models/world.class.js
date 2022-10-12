@@ -216,9 +216,7 @@ class World {
   checkCollisionsCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
-        if (soundOn == true) {
-          this.playCoinCollectedMP3();
-        }
+        if (soundOn == true) this.playCoinCollectedMP3();
         const coinToRemove = this.coins.indexOf(coin);
         this.coins.splice(coinToRemove, 1);
         this.character.coinsAmount++;
