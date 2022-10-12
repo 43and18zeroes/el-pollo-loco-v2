@@ -104,6 +104,7 @@ class Endboss extends MovableObject {
   }
 
   bossEnraged() {
+    this.runLeft();
     let id = setInterval(() => {
       this.playAnimation(this.IMAGES_ENRAGED);
     }, 150);

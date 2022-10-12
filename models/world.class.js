@@ -268,7 +268,7 @@ class World {
     this.ThrowableObjects.forEach((ThrowableObject) => {
       if (this.properBossHit(ThrowableObject)) {
         this.damageBoss();
-        if (this.endBoss[0].endBossHealth > 0) {
+        if (this.endBoss[0].endBossHealth > 0 && this.endBoss[0].x == 2470) {
           this.endBoss[0].bossEnraged();
         }
       }
@@ -291,9 +291,7 @@ class World {
     this.bossHit = true;
     this.endBoss[0].endBossHealth--;
     this.ThrowableObjects[0].bottleBreak();
-    if (this.endBoss[0].x == 2470) {
-      this.endBoss[0].runLeft();
-    }
+    
     setTimeout(() => {
       this.bossHit = false;
     }, 1000);
