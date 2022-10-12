@@ -15,6 +15,9 @@ class World {
   game_music = new Audio("audio/mexican-huapango-banda-2715.mp3");
   bottleCollectedMP3 = new Audio("audio/collect-bottle.mp3");
 
+  totalBottlesOnMap = this.bottles.length;
+  totalBottlesCollected = 0;
+
   canvas;
   ctx;
   keyboard;
@@ -140,7 +143,15 @@ class World {
       this.checkThrowObjects();
       this.checkIfBossIsDead();
       this.checkCollisionsBoss();
+      this.checkStandoff();
     }, 50);
+  }
+
+  checkStandoff() {
+    if(this.totalBottlesOnMap == this.totalBottlesCollected &&
+      this.endBoss[0].x == 2470) {
+        this.endBoss[0].bossEnraged();
+    }
   }
 
   i = 1;
@@ -259,6 +270,7 @@ class World {
     const bottleToRemove = this.bottles.indexOf(bottle);
     this.bottles.splice(bottleToRemove, 1);
     this.character.bottleAmount++;
+    this.totalBottlesCollected++;
     this.bottleAmountBar.setPercentageBottleBarAmount(
       this.character.bottleAmount
     );
