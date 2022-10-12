@@ -24,27 +24,11 @@ class Character extends MovableObject {
   ];
 
   IMAGES_JUMPING = [
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-31.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-32.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-33.png",
     "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-34.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-35.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-36.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-37.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-38.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-39.png"
   ];
 
   IMAGES_FALLING = [
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-31.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-32.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-33.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-34.png",
     "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-35.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-36.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-37.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-38.png",
-    // "img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-39.png"
   ];
 
   IMAGES_DEAD = [
@@ -106,7 +90,7 @@ class Character extends MovableObject {
 
   moveRight() {
     this.x += this.speed;
-    // character move right -> sound plays
+
     this.otherDirection = false;
     if (soundOn == true && this.y >= 180) {
       this.walking_sound.play();

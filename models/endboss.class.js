@@ -45,8 +45,6 @@ class Endboss extends MovableObject {
   world;
 
   constructor() {
-    // if even the loadImages should load the images with a problem
-    // the loadImage loads the first img just in case
     super().loadImage(this.IMAGES_WALKING[0]);
     this.loadImages(this.IMAGES_WALKING);
     this.loadImages(this.IMAGES_DYING);

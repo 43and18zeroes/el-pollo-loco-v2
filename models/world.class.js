@@ -23,8 +23,8 @@ class World {
   keyboard;
   camera_x = 0;
 
-  alreadyThrown = false; // auxiliary var to prevent rapid throwing
-  bossHit = false; // auxiliary var to time boss hits
+  alreadyThrown = false;
+  bossHit = false;
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -49,10 +49,10 @@ class World {
     this.ctx.translate(this.camera_x, 0);
     this.renderObjects();
     this.addToMap(this.character);
-    this.ctx.translate(-this.camera_x, 0); // translate camera back before drawing a fixed object
+    this.ctx.translate(-this.camera_x, 0);
     this.renderFixedObjects();
-    this.ctx.translate(this.camera_x, 0); // translate camera forward again before drawing movable objects
-    this.ctx.translate(-this.camera_x, 0); // return camera after everything is drawed (otherwise it would translate until infinity)
+    this.ctx.translate(this.camera_x, 0);
+    this.ctx.translate(-this.camera_x, 0);
     this.checkDevice();
     let self = this;
     requestAnimationFrame(function () {
@@ -98,15 +98,7 @@ class World {
     if (mo.otherDirection) {
       this.flipImage(mo);
     }
-
     mo.draw(this.ctx);
-
-    // if (this.checkIfOffsetExists(mo)) {
-    //   mo.drawHitbox(this.ctx);
-    // } else {
-    //   mo.drawFrame(this.ctx);
-    // }
-
     if (mo.otherDirection) {
       this.flipImageBack(mo);
     }
