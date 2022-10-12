@@ -152,7 +152,8 @@ class World {
     if (
       this.keyboard.D &&
       !this.alreadyThrown &&
-      this.character.bottleAmount > 0
+      this.character.bottleAmount > 0 &&
+      !this.character.otherDirection
     ) {
       // this.i++;
       this.character.bottleAmount--;

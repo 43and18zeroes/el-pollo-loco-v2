@@ -47,15 +47,9 @@ class ThrowableObject extends MovableObject {
     throw() {
         this.speedY = 10;
         this.applyGravity();
-        if (!world.character.otherDirection) {
             setInterval(() => {
                 this.x += 15;
             }, 25);
-        } else {
-            setInterval(() => {
-                this.x -= 15;
-            }, 25);
-        }
     }
 
     rotationAnimation() {
