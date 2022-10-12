@@ -154,19 +154,13 @@ class World {
     }
   }
 
-  i = 1;
-
   checkThrowObjects() {
-    // console.log(this.i + " this.keyboard.D", this.keyboard.D,
-    //   "!this.alreadyThrown", !this.alreadyThrown,
-    //   "this.character.bottleAmount > 0", this.character.bottleAmount > 0)
     if (
       this.keyboard.D &&
       !this.alreadyThrown &&
       this.character.bottleAmount > 0 &&
       !this.character.otherDirection
     ) {
-      // this.i++;
       this.character.bottleAmount--;
       this.bottleAmountBar.setPercentageBottleBarAmount(this.character.bottleAmount);
       this.throwBottle();
