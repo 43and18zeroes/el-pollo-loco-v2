@@ -22,7 +22,7 @@ function startGame() {
         forceFullscreen();
     }
     gameOver = false;
-    if (soundOn == true) {
+    if (soundOn) {
         pepeStartMP3.play();
     }
     initLevel();
@@ -37,7 +37,7 @@ function initLevelMedia() {
         document.getElementById("pepestart").style.display = "none";
     }, 1500);
     setTimeout(() => {
-        if (soundOn == true) {
+        if (soundOn) {
             collectBottlesMP3.play();
         }
     }, 2000);
@@ -178,7 +178,7 @@ function playSound(sound, volume) {
 
 function soundOnOff() {
     const soundOnOffIcon = document.getElementById('soundonofficon');
-    if (soundOn == true) {
+    if (soundOn) {
         soundOn = false;
         soundOnOffIcon.innerText = 'volume_off';
         world.game_music.pause();

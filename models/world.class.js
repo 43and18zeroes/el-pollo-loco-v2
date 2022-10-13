@@ -33,7 +33,7 @@ class World {
     this.draw();
     this.setWorld();
     this.run();
-    if (soundOn == true) {
+    if (soundOn) {
       this.game_music.volume = 0.1;
       this.game_music.play();
     }
@@ -197,7 +197,7 @@ class World {
   }
 
   chickenDies(enemy) {
-    if (soundOn == true) {
+    if (soundOn) {
       this.playboingOnChickenHeadMP3();
     }
     this.character.speedY = 6.5;
@@ -216,7 +216,7 @@ class World {
   checkCollisionsCoins() {
     this.level.coins.forEach((coin) => {
       if (this.character.isColliding(coin)) {
-        if (soundOn == true) this.playCoinCollectedMP3();
+        if (soundOn) this.playCoinCollectedMP3();
         const coinToRemove = this.coins.indexOf(coin);
         this.coins.splice(coinToRemove, 1);
         this.character.coinsAmount++;
@@ -248,7 +248,7 @@ class World {
   }
 
   collectBottle(bottle) {
-    if (soundOn == true) {
+    if (soundOn) {
       this.bottleCollectedMP3.play();
     }
     const bottleToRemove = this.bottles.indexOf(bottle);
