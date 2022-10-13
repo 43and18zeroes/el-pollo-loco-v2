@@ -18,7 +18,7 @@ function init() {
 
 function startGame() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    && screen.availHeight < screen.availWidth) {
+        && screen.availHeight < screen.availWidth) {
         forceFullscreen();
     }
     gameOver = false;
@@ -145,7 +145,7 @@ function toggleFullscreen() {
 }
 
 function forceFullscreen() {
-        addFullscreenClasses();
+    addFullscreenClasses();
 }
 
 function addFullscreenClasses() {
@@ -167,8 +167,8 @@ document.addEventListener("fullscreenchange", function () {
 
 
 function playSound(sound, volume) {
-    if(soundOn) {
-        if(volume) {
+    if (soundOn) {
+        if (volume) {
             sound.volume = 0.01;
         }
 
@@ -212,4 +212,11 @@ function endSoundOnRestart() {
 function restartGame() {
     endSoundOnRestart();
     startGame();
+}
+
+function endGame() {
+    for (let i = 1; i < 9999; i++)
+        window.clearInterval(i);
+    world.game_music.pause();
+    world.ThrowableObjects = [];
 }

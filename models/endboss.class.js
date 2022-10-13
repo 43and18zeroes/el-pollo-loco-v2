@@ -106,9 +106,7 @@ class Endboss extends MovableObject {
       if (soundOn) {
         this.endScreenMP3.play();
       }
-      for (let i = 1; i < 9999; i++) window.clearInterval(i);
-      world.game_music.pause();
-      world.ThrowableObjects = [];
+      endGame();
     }, 3500);
   }
 
