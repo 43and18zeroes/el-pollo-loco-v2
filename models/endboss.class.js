@@ -40,6 +40,17 @@ class Endboss extends MovableObject {
     "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/3.Herida/G23.png",
   ];
 
+  IMAGES_ENRAGED2 = [
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G13.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G14.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G15.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G16.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G17.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G18.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G19.png",
+    "img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/2.Ataque/G20.png"
+  ];
+
   bossDefeatedMP3 = new Audio("audio/boss-defeated.mp3");
   endScreenMP3 = new Audio("audio/endscreen.mp3");
   world;
@@ -48,7 +59,7 @@ class Endboss extends MovableObject {
     super().loadImage(this.IMAGES_WALKING[0]);
     this.loadImages(this.IMAGES_WALKING);
     this.loadImages(this.IMAGES_DYING);
-    this.loadImages(this.IMAGES_ENRAGED);
+    this.loadImages(this.IMAGES_ENRAGED2);
     this.x = 2470;
     this.animate();
   }
@@ -104,7 +115,7 @@ class Endboss extends MovableObject {
   bossEnraged() {
     this.runLeft();
     let id = setInterval(() => {
-      this.playAnimation(this.IMAGES_ENRAGED);
+      this.playAnimation(this.IMAGES_ENRAGED2);
     }, 150);
     this.endBossIntervals.push(id);
   }
