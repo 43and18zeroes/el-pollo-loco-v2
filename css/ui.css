@@ -12,6 +12,8 @@
     flex-direction: column;
     justify-content: space-between;
     padding: calc(var(--control-button-size) / 12.5);
+    margin-left: 5.5%;
+    margin-right: 5.5%;
 }
 
 .upper__buttons {

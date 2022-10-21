@@ -1,0 +1,82 @@
+Date : 2022-10-14 18:48:57
+Directory : h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2
+Total : 43 files,  1825 codes, 17 comments, 305 blanks, all 2147 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         27 |      1,255 |          0 |        204 |      1,459 |
+| CSS        |          3 |        300 |         13 |         52 |        365 |
+| HTML       |          3 |        161 |          4 |         46 |        211 |
+| XML        |          8 |         92 |          0 |          2 |         94 |
+| JSON       |          1 |         14 |          0 |          1 |         15 |
+| Markdown   |          1 |          3 |          0 |          0 |          3 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                 | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                    |         43 |      1,825 |         17 |        305 |      2,147 |
+| css                                                                                                                  |          3 |        300 |         13 |         52 |        365 |
+| img                                                                                                                  |         11 |        162 |          0 |          9 |        171 |
+| img\buttons                                                                                                          |          7 |         30 |          0 |          0 |         30 |
+| img\favicon                                                                                                          |          3 |        100 |          0 |          3 |        103 |
+| img\pepe_start                                                                                                       |          1 |         32 |          0 |          6 |         38 |
+| js                                                                                                                   |          1 |        201 |          0 |         21 |        222 |
+| levels                                                                                                               |          1 |         76 |          0 |          8 |         84 |
+| models                                                                                                               |         25 |        978 |          0 |        175 |      1,153 |
+| models\statusbars                                                                                                    |          4 |         98 |          0 |         22 |        120 |
+| models\touchbuttons                                                                                                  |          3 |         26 |          0 |         10 |         36 |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                             | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\README.md                                                     | Markdown   |          3 |          0 |          0 |          3 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\css\responsive.css                                            | CSS        |         79 |          1 |         12 |         92 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\css\style.css                                                 | CSS        |        111 |          7 |         17 |        135 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\css\ui.css                                                    | CSS        |        110 |          5 |         23 |        138 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\buttons\arrow_circle_left_FILL0_wght400_GRAD0_opsz48.svg  | XML        |          1 |          0 |          0 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\buttons\arrow_circle_right_FILL0_wght400_GRAD0_opsz48.svg | XML        |          1 |          0 |          0 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\buttons\arrow_circle_up_FILL0_wght400_GRAD0_opsz48.svg    | XML        |          1 |          0 |          0 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\buttons\buttons.html                                      | HTML       |         24 |          0 |          0 |         24 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\buttons\dry_FILL0_wght400_GRAD0_opsz48.svg                | XML        |          1 |          0 |          0 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\buttons\fullscreen_FILL0_wght400_GRAD0_opsz48.svg         | XML        |          1 |          0 |          0 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\buttons\fullscreen_exit_FILL0_wght400_GRAD0_opsz48.svg    | XML        |          1 |          0 |          0 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\favicon\browserconfig.xml                                 | XML        |          9 |          0 |          1 |         10 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\favicon\safari-pinned-tab.svg                             | XML        |         77 |          0 |          1 |         78 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\favicon\site.webmanifest                                  | JSON       |         14 |          0 |          1 |         15 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\img\pepe_start\pepe-start.html                                | HTML       |         32 |          0 |          6 |         38 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\index.html                                                    | HTML       |        105 |          4 |         40 |        149 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\js\game.js                                                    | JavaScript |        201 |          0 |         21 |        222 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\levels\level1.js                                              | JavaScript |         76 |          0 |          8 |         84 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\babychicken.class.js                                   | JavaScript |          0 |          0 |          1 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\background-object.class.js                             | JavaScript |          9 |          0 |          2 |         11 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\bottle.class.js                                        | JavaScript |         15 |          0 |          4 |         19 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\character.class.js                                     | JavaScript |        169 |          0 |         29 |        198 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\chicken.class.js                                       | JavaScript |         32 |          0 |          9 |         41 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\cloud.class.js                                         | JavaScript |         17 |          0 |          4 |         21 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\coin.class.js                                          | JavaScript |         16 |          0 |          5 |         21 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\collectable-object.class.js                            | JavaScript |          8 |          0 |          2 |         10 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\drawable-object.class.js                               | JavaScript |         34 |          0 |          4 |         38 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\endboss.class.js                                       | JavaScript |        105 |          0 |         16 |        121 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\keyboard.class.js                                      | JavaScript |          9 |          0 |          0 |          9 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\level.class.js                                         | JavaScript |         17 |          0 |          2 |         19 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\movable-object.class.js                                | JavaScript |         63 |          0 |         12 |         75 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\salsabottle.class.js                                   | JavaScript |          0 |          0 |          1 |          1 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\start-screen.class.js                                  | JavaScript |          9 |          0 |          2 |         11 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\static-screen.class.js                                 | JavaScript |          2 |          0 |          2 |          4 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\statusbars\bottleamount-bar.class.js                   | JavaScript |         27 |          0 |          6 |         33 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\statusbars\coinamount-bar.class.js                     | JavaScript |         27 |          0 |          6 |         33 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\statusbars\health-bar.class.js                         | JavaScript |         21 |          0 |          5 |         26 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\statusbars\status-bar.class.js                         | JavaScript |         23 |          0 |          5 |         28 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\throwable-object.class.js                              | JavaScript |         67 |          0 |         11 |         78 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\touchbuttons\touchbutton-left.class.js                 | JavaScript |          8 |          0 |          4 |         12 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\touchbuttons\touchbutton-right.class.js                | JavaScript |          8 |          0 |          4 |         12 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\touchbuttons\touchbutton.class.js                      | JavaScript |         10 |          0 |          2 |         12 |
+| h:\Daten\developerakademie\11_modul11\el_pollo_loco_v2\models\world.class.js                                         | JavaScript |        282 |          0 |         37 |        319 |
+| Total                                                                                                                |            |      1,825 |         17 |        305 |      2,147 |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
